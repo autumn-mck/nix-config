@@ -375,16 +375,16 @@
       mimeApps = {
         enable = true;
         defaultApplications = {
-          # librewolf as default browser and html viewer
+          # librewolf as browser (pdf files too)
           "x-scheme-handler/http" = "librewolf.desktop";
           "x-scheme-handler/https" = "librewolf.desktop";
           "text/html" = "librewolf.desktop";
-          "application/xhtml+xml" = "librewolf.desktop";
+          "application/pdf" = "librewolf.desktop";
 
           # thunderbird as default mail client
           "x-scheme-handler/mailto" = "thunderbird.desktop";
 
-          # gwenview as default image viewer
+          # gwenview as image viewer
           "image/bmp" = "gwenview.desktop";
           "image/gif" = "gwenview.desktop";
           "image/jpeg" = "gwenview.desktop";
@@ -398,6 +398,10 @@
           "video/mpeg" = "vlc.desktop";
           "video/ogg" = "vlc.desktop";
           "video/quicktime" = "vlc.desktop";
+
+          # vscode for text files, csv files, etc
+          "text/plain" = "code.desktop";
+          "text/csv" = "code.desktop";
         };
       };
     };
