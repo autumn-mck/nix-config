@@ -166,6 +166,8 @@
     catppuccin-qt5ct
     lightly-boehs
 
+    libsForQt5.gwenview
+
     qbittorrent
 
     nixpkgs-fmt
@@ -361,11 +363,46 @@
     qt.enable = true;
     qt.platformTheme = "qtct";
 
-    xdg.configFile = {
-      "gtk-4.0/assets".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/assets";
-      "gtk-4.0/gtk.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk.css";
-      "gtk-4.0/gtk-dark.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+    xdg = {
+      enable = true;
+
+      configFile = {
+        "gtk-4.0/assets".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/assets";
+        "gtk-4.0/gtk.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk.css";
+        "gtk-4.0/gtk-dark.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+      };
+
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          # librewolf as default browser and html viewer
+          "x-scheme-handler/http" = "librewolf.desktop";
+          "x-scheme-handler/https" = "librewolf.desktop";
+          "text/html" = "librewolf.desktop";
+          "application/xhtml+xml" = "librewolf.desktop";
+
+          # thunderbird as default mail client
+          "x-scheme-handler/mailto" = "thunderbird.desktop";
+
+          # gwenview as default image viewer
+          "image/bmp" = "gwenview.desktop";
+          "image/gif" = "gwenview.desktop";
+          "image/jpeg" = "gwenview.desktop";
+          "image/png" = "gwenview.desktop";
+          "image/svg+xml" = "gwenview.desktop";
+          "image/tiff" = "gwenview.desktop";
+
+          # VLC as video player
+          "video/3gpp" = "vlc.desktop";
+          "video/mp4" = "vlc.desktop";
+          "video/mpeg" = "vlc.desktop";
+          "video/ogg" = "vlc.desktop";
+          "video/quicktime" = "vlc.desktop";
+        };
+      };
     };
+
+
 
     programs.git = {
       enable = true;
