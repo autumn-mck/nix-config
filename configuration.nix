@@ -468,22 +468,48 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
 
-        github.copilot
+        mhutchie.git-graph
 
         esbenp.prettier-vscode
+
+        github.copilot
+
+        coolbear.systemd-unit-file
         jnoortheen.nix-ide
+        unifiedjs.vscode-mdx
+        astro-build.astro-vscode
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
+        "workbench.iconTheme" = "catppuccin-macchiato";
 
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.tabSize" = 2;
+        "editor.insertSpaces" = false;
+        "editor.inlineSuggest.enabled" = true;
+        "editor.renderWhitespace" = "trailing";
         "editor.formatOnSave" = true;
 
+        "terminal.external.linuxExec" = "kitty";
         "terminal.integrated.defaultProfile.linux" = "fish";
         "window.menuBarVisibility" = "toggle";
 
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "prettier.printWidth" = 100;
+        "prettier.bracketSameLine" = true;
+        "prettier.useTabs" = true;
+
+        "git.autofetch" = true;
+        "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
+
+        "explorer.confirmSync" = false;
+
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        };
+
+        "[astro]" = {
+          "editor.defaultFormatter" = "astro-build.astro-vscode";
         };
       };
     };
