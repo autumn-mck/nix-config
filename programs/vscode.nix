@@ -1,0 +1,59 @@
+{ home-manager, pkgs, ... }:
+
+{
+  programs.vscode = {
+    enable = true;
+    # sandboxes vscode, which allows extensions to work without additional configuration,
+    # but as a result prevents elevated permissions from being used in the terminal (e.g. sudo)
+    # (might look at this again later, but commented out is fine for now)
+    #package = pkgs.vscode.fhs;
+    extensions = with pkgs.vscode-extensions; [
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
+
+      mhutchie.git-graph
+
+      esbenp.prettier-vscode
+
+      github.copilot
+
+      coolbear.systemd-unit-file
+      jnoortheen.nix-ide
+      unifiedjs.vscode-mdx
+      astro-build.astro-vscode
+    ];
+    userSettings = {
+      "workbench.colorTheme" = "Catppuccin Macchiato";
+      "workbench.iconTheme" = "catppuccin-macchiato";
+
+      "editor.tabSize" = 2;
+      "editor.insertSpaces" = false;
+      "editor.inlineSuggest.enabled" = true;
+      "editor.renderWhitespace" = "trailing";
+      "editor.formatOnSave" = true;
+
+      "terminal.external.linuxExec" = "kitty";
+      "terminal.integrated.defaultProfile.linux" = "fish";
+      "window.menuBarVisibility" = "toggle";
+
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "prettier.printWidth" = 100;
+      "prettier.bracketSameLine" = true;
+      "prettier.useTabs" = true;
+
+      "git.autofetch" = true;
+      "git.enableSmartCommit" = true;
+      "git.confirmSync" = false;
+
+      "explorer.confirmDragAndDrop" = false;
+
+      "[nix]" = {
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
+
+      "[astro]" = {
+        "editor.defaultFormatter" = "astro-build.astro-vscode";
+      };
+    };
+  };
+}

@@ -1,0 +1,21 @@
+{ config, pkgs, ... }:
+
+{
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+  };
+
+  environment.systemPackages = with pkgs; [
+    grc
+    fishPlugins.pure
+    fishPlugins.autopair
+    fishPlugins.sponge
+    fishPlugins.done
+    fishPlugins.z
+    fishPlugins.grc
+    fishPlugins.puffer
+  ];
+}
