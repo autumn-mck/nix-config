@@ -110,6 +110,8 @@
     gimp
     vesktop
     prismlauncher
+    dolphin-emu
+    #itch
     protonmail-bridge
     cava
     xdg-ninja
@@ -172,6 +174,9 @@
     qbittorrent
 
     nixpkgs-fmt
+
+    jetbrains.rider
+    jetbrains.idea-ultimate
 
     (catppuccin-gtk.override {
       accents = [ "mauve" ];
@@ -410,8 +415,6 @@
         };
       };
     };
-
-
 
     programs.git = {
       enable = true;
