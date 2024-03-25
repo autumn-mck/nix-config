@@ -3,6 +3,7 @@
 {
   imports = [
     nixos-hardware.nixosModules.framework-13-7040-amd
+    ./hardware-configuration.nix
   ];
 
   services.fwupd.enable = true;
