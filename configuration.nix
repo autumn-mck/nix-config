@@ -98,6 +98,7 @@
 
     bitwarden-desktop
     vlc
+    gimp
 
     winetricks
     wine-staging
@@ -391,6 +392,10 @@
           "image/png" = "gwenview.desktop";
           "image/svg+xml" = "gwenview.desktop";
           "image/tiff" = "gwenview.desktop";
+
+          # gimp as image editor
+          "image/x-xcf" = "gimp.desktop";
+          "image/x-psd" = "gimp.desktop";
 
           # VLC as video player
           "video/3gpp" = "vlc.desktop";
