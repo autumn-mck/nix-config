@@ -134,6 +134,11 @@
     jetbrains.rider
     jetbrains.idea-ultimate
 
+    distrobox
+    boxbuddy
+
+    podman-compose
+
     (catppuccin-gtk.override {
       accents = [ "mauve" ];
       size = "compact";
@@ -141,6 +146,14 @@
       variant = "macchiato";
     })
   ];
+
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   programs.steam.enable = true;
 
