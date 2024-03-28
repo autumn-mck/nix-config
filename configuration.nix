@@ -77,7 +77,6 @@
     xdg-utils
     desktop-file-utils
 
-    neofetch
     bottom
     tealdeer
     bat
@@ -173,9 +172,12 @@
       ./programs/firefox.nix
       ./programs/librewolf.nix
       ./programs/thunderbird.nix
-      ./programs/hyfetch.nix
+      ./programs/hyfetch/hyfetch.nix
       ./programs/kitty.nix
       ./programs/git.nix
+      ./programs/swaync/swaync.nix
+      ./programs/qtct/qtct.nix
+      ./programs/fuzzel.nix
     ];
 
     home.packages = [
@@ -212,9 +214,6 @@
         };
       };
     };
-
-    qt.enable = true;
-    qt.platformTheme = "qtct";
 
     xdg = {
       enable = true;
@@ -264,10 +263,24 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    twitter-color-emoji
-    (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
-  ];
+  fonts = {
+    packages = with pkgs; [
+      twitter-color-emoji
+      (nerdfonts.override { fonts = [ "Mononoki" ]; })
+      ibm-plex
+      mononoki
+    ];
+
+    fontDir.enable = true;
+
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [ "IBM Plex Sans" ];
+        serif = [ "IBM Plex Serif" ];
+        monospace = [ "Mononoki Nerd Font" "IBM Plex Mono" ];
+      };
+    };
+  };
 
   environment.sessionVariables = {
     DOTNET_CLI_TELEMETRY_OPTOUT = "1";

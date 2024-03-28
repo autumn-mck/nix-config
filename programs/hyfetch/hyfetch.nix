@@ -1,6 +1,10 @@
-{ home-manager, ... }:
+{ home-manager, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    neofetch
+  ];
+
   programs.hyfetch = {
     enable = true;
     settings = {
@@ -14,4 +18,6 @@
       backend = "neofetch";
     };
   };
+
+  xdg.configFile."neofetch/config.conf".source = ./neofetch.conf;
 }

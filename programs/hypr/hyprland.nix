@@ -21,11 +21,7 @@
     swappy
     wl-clipboard
 
-    libnotify
-    swaynotificationcenter
-
     bemoji
-    fuzzel
     cliphist
     wl-clip-persist
 
@@ -37,9 +33,6 @@
     libsForQt5.dolphin # kde6 version seems to run through xwayland for some reason, kde5 version is fine for now
     libsForQt5.ark
 
-    qt5ct
-    qt6ct
-    catppuccin-qt5ct
     lightly-boehs
 
     libsForQt5.gwenview
