@@ -1,16 +1,28 @@
-{ home-manager, ... }:
+{ home-manager, lib, config, ... }:
 
 {
-  programs.kitty = {
-    enable = true;
-    theme = "Catppuccin-Macchiato";
-    environment = {
-      "SHELL" = "fish";
+  options = {
+    kitty = {
+      enable = lib.mkEnableOption "kitty";
+      defaultShell = lib.mkOption {
+        type = lib.types.str;
+        default = "fish";
+      };
     };
+  };
 
-    settings = {
-      background_opacity = "0.8";
-      shell = "fish";
+  config = lib.mkIf config.kitty.enable {
+    programs.kitty = {
+      enable = true;
+      theme = "Catppuccin-Macchiato";
+      environment = {
+        "SHELL" = config.kitty.defaultShell;
+      };
+
+      settings = {
+        background_opacity = "0.8";
+        shell = config.kitty.defaultShell;
+      };
     };
   };
 }

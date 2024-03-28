@@ -15,6 +15,8 @@
       ./bluetooth.nix
     ];
 
+  fish.enable = true;
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -179,6 +181,8 @@
       ./programs/qtct/qtct.nix
       ./programs/fuzzel.nix
     ];
+
+    kitty.enable = true;
 
     home.packages = [
     ];
