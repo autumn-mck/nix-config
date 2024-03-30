@@ -51,4 +51,9 @@
       });
     })
   ];
+
+  environment.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # only works with electron 28+
+    NIXOS_OZONE_WL = "1";
+  };
 }

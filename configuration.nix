@@ -11,8 +11,11 @@
       ./programs/syncthing.nix
       ./programs/javascript.nix
       ./programs/distrobox.nix
+      ./programs/pipewire.nix
       ./declutterHome.nix
       ./bluetooth.nix
+      ./desktops/desktop.nix
+      ./desktops/cherry/cherry.nix
     ];
 
   fish.enable = true;
@@ -27,29 +30,6 @@
   networking.hostName = "cherry";
 
   networking.networkmanager.enable = true;
-
-  # Europe/Belfast is just a link to Europe/London for now, but still nice to have
-  time.timeZone = "Europe/Belfast";
-
-  i18n.defaultLocale = "en_GB.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_NUMERIC = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-    LC_TIME = "en_GB.UTF-8";
-  };
-
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
-
-  console.keyMap = "uk";
 
   users.users.autumn = {
     isNormalUser = true;
@@ -71,13 +51,10 @@
     unzip
     p7zip
     unrar
+    curl
     wget
 
     imagemagick
-    inkscape
-
-    xdg-utils
-    desktop-file-utils
 
     bottom
     tealdeer
@@ -92,43 +69,9 @@
     dotnet-runtime_8
     dotnet-aspnetcore_8
 
-    libreoffice
-    hunspell
-    hunspellDicts.en-gb-ise
-
-    bitwarden-desktop
-    vlc
-    gimp
-
-    winetricks
-    wine-staging
-    qbittorrent
     whois
-    godot_4
-    handbrake
-    obs-studio
-    gimp
-    vesktop
-    prismlauncher
-    dolphin-emu
-    #itch
-    protonmail-bridge
-    cava
     xdg-ninja
-    ungoogled-chromium
     geekbench
-
-    pcmanfm
-
-    gparted
-    kdePackages.partitionmanager
-    networkmanagerapplet
-    helvum
-    pavucontrol
-    pamixer
-    brightnessctl
-
-    qbittorrent
 
     nixpkgs-fmt
 
@@ -145,24 +88,7 @@
     })
   ];
 
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
-
-  programs.steam.enable = true;
-
   # Services
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    jack.enable = true;
-  };
-
   # services.openssh.enable = true;
 
   home-manager.useGlobalPkgs = true;
@@ -180,117 +106,18 @@
       ./programs/swaync/swaync.nix
       ./programs/qtct/qtct.nix
       ./programs/fuzzel.nix
+      ./programs/cursor.nix
+      ./programs/gtk.nix
     ];
 
     kitty.enable = true;
 
     home.packages = [
     ];
-
-    home.pointerCursor = {
-      package = pkgs.catppuccin-cursors.macchiatoMauve;
-      name = "Catppuccin-Macchiato-Mauve-Cursors";
-      gtk.enable = true;
-      size = 48;
-    };
-
-    gtk.cursorTheme = {
-      name = "Catppuccin-Macchiato-Mauve-Cursors";
-      size = 48;
-    };
-
-    gtk = {
-      enable = true;
-      theme = {
-        name = "Catppuccin-Macchiato-Compact-Mauve-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = [ "mauve" ];
-          size = "compact";
-          tweaks = [ "rimless" ];
-          variant = "macchiato";
-        };
-      };
-      iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.catppuccin-papirus-folders.override {
-          accent = "mauve";
-          flavor = "macchiato";
-        };
-      };
-    };
-
-    xdg = {
-      enable = true;
-
-      configFile = {
-        "gtk-4.0/assets".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/assets";
-        "gtk-4.0/gtk.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk.css";
-        "gtk-4.0/gtk-dark.css".source = "${config.home-manager.users.autumn.gtk.theme.package}/share/themes/${config.home-manager.users.autumn.gtk.theme.name}/gtk-4.0/gtk-dark.css";
-      };
-
-      mimeApps = {
-        enable = true;
-        defaultApplications = {
-          # librewolf as browser (pdf files too)
-          "x-scheme-handler/http" = "librewolf.desktop";
-          "x-scheme-handler/https" = "librewolf.desktop";
-          "text/html" = "librewolf.desktop";
-          "application/pdf" = "librewolf.desktop";
-
-          # thunderbird as default mail client
-          "x-scheme-handler/mailto" = "thunderbird.desktop";
-
-          # gwenview as image viewer
-          "image/bmp" = "gwenview.desktop";
-          "image/gif" = "gwenview.desktop";
-          "image/jpeg" = "gwenview.desktop";
-          "image/png" = "gwenview.desktop";
-          "image/svg+xml" = "gwenview.desktop";
-          "image/tiff" = "gwenview.desktop";
-
-          # gimp as image editor
-          "image/x-xcf" = "gimp.desktop";
-          "image/x-psd" = "gimp.desktop";
-
-          # VLC as video player
-          "video/3gpp" = "vlc.desktop";
-          "video/mp4" = "vlc.desktop";
-          "video/mpeg" = "vlc.desktop";
-          "video/ogg" = "vlc.desktop";
-          "video/quicktime" = "vlc.desktop";
-
-          # vscode for text files, csv files, etc
-          "text/plain" = "code.desktop";
-          "text/csv" = "code.desktop";
-        };
-      };
-    };
-  };
-
-  fonts = {
-    packages = with pkgs; [
-      twitter-color-emoji
-      (nerdfonts.override { fonts = [ "Mononoki" ]; })
-      ibm-plex
-      mononoki
-    ];
-
-    fontDir.enable = true;
-
-    fontconfig = {
-      defaultFonts = {
-        sansSerif = [ "IBM Plex Sans" ];
-        serif = [ "IBM Plex Serif" ];
-        monospace = [ "Mononoki Nerd Font" "IBM Plex Mono" ];
-      };
-    };
   };
 
   environment.sessionVariables = {
     DOTNET_CLI_TELEMETRY_OPTOUT = "1";
-
-    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # only works with electron 28+
-    NIXOS_OZONE_WL = "1";
   };
 
   # This value determines the NixOS release from which the default

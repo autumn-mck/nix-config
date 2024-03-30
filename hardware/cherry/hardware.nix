@@ -1,4 +1,4 @@
-{ config, nixos-hardware, pkgs, ... }:
+{ config, nixos-hardware, pkgs, lib, ... }:
 
 {
   imports = [
@@ -7,6 +7,18 @@
   ];
 
   services.fwupd.enable = true;
+
+  # only for installing an unsigned beta firmware (eg. 3.03b), not generally needed
+  # environment.etc."fwupd/daemon.conf".text = lib.mkForce ''
+  #   [fwupd]
+  #   DisabledPlugins=test;test_ble
+  #   IdleTimeout=7200
+  #   IgnorePower=false
+  #   ShowDevicePrivate=true
+  #   AllowEmulation=false
+  #   OnlyTrusted=false
+  # '';
+
   # we need fwupd 1.9.7 to downgrade the fingerprint sensor firmware
   # (from https://github.com/NixOS/nixos-hardware/tree/master/framework/13-inch/7040-amd#getting-the-fingerprint-sensor-to-work)
   services.fwupd.package = (import
@@ -17,4 +29,11 @@
     {
       inherit (pkgs) system;
     }).fwupd;
+
+  services.xserver.xkb = {
+    layout = "gb";
+    variant = "";
+  };
+
+  console.keyMap = "uk";
 }

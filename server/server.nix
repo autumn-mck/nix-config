@@ -6,11 +6,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    curl
-    wget
-    git
-    bottom
-    neofetch
   ];
 
   programs.fish.enable = true;
