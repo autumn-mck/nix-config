@@ -19,6 +19,7 @@
     ];
 
   fish.enable = true;
+  distrobox.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -111,6 +112,9 @@
     ];
 
     kitty.enable = true;
+    cursor.enable = true;
+    firefox.enable = true;
+    fuzzel.enable = true;
 
     home.packages = [
     ];

@@ -1,16 +1,22 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    distrobox
-    boxbuddy
-  ];
+  options = {
+    distrobox.enable = lib.mkEnableOption "distrobox";
+  };
 
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
+  config = lib.mkIf config.distrobox.enable {
+    environment.systemPackages = with pkgs; [
+      distrobox
+      boxbuddy
+    ];
+
+    virtualisation = {
+      podman = {
+        enable = true;
+        dockerCompat = true;
+        defaultNetwork.settings.dns_enabled = true;
+      };
     };
   };
 }

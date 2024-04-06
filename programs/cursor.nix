@@ -1,15 +1,23 @@
-{ home-manager, pkgs, ... }:
+{ home-manager, pkgs, lib, config, ... }:
 
 {
-  home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.macchiatoMauve;
-    name = "Catppuccin-Macchiato-Mauve-Cursors";
-    #gtk.enable = true; # what does this do compared to the gtk.cursorTheme?
-    size = 48;
+  options = {
+    cursor = {
+      enable = lib.mkEnableOption "cursor";
+    };
   };
 
-  gtk.cursorTheme = {
-    name = "Catppuccin-Macchiato-Mauve-Cursors";
-    size = 48;
+  config = lib.mkIf (config.cursor.enable) {
+    home.pointerCursor = {
+      package = pkgs.catppuccin-cursors.macchiatoMauve;
+      name = "Catppuccin-Macchiato-Mauve-Cursors";
+      #gtk.enable = true; # what does this do compared to the gtk.cursorTheme?
+      size = 48;
+    };
+
+    gtk.cursorTheme = {
+      name = "Catppuccin-Macchiato-Mauve-Cursors";
+      size = 48;
+    };
   };
 }
