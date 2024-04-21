@@ -7,7 +7,7 @@
   ];
 
   qt.enable = true;
-  qt.platformTheme = "qtct";
+  qt.platformTheme.name = "qtct";
 
   xdg.configFile."qt5ct/qt5ct.conf".source = ./qt5ct.conf;
   xdg.configFile."qt6ct/qt6ct.conf".source = ./qt6ct.conf;
