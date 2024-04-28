@@ -118,6 +118,7 @@
 
     xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
     xdg.configFile."hypr/scripts/screenshot.sh".source = ./programs/hypr/screenshot.sh;
+    xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./programs/hypr/blue-light-filter.glsl;
 
     home.packages = [
     ];
