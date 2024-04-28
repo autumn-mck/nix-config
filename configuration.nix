@@ -117,6 +117,7 @@
     fuzzel.enable = true;
 
     xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
+    xdg.configFile."hypr/scripts/screenshot.sh".source = ./programs/hypr/screenshot.sh;
 
     home.packages = [
     ];
