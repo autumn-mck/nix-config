@@ -116,6 +116,8 @@
     firefox.enable = true;
     fuzzel.enable = true;
 
+    xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
+
     home.packages = [
     ];
   };
