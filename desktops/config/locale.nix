@@ -16,7 +16,7 @@
   };
 
   config = {
-    time.timeZone = config.timeZone;
+    time.timeZone = "Europe/Berlin";
 
     i18n.defaultLocale = config.locale;
     i18n.extraLocaleSettings = {
