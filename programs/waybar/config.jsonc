@@ -1,0 +1,160 @@
+{
+	"layer": "top",
+	"position": "top",
+
+	"modules-left": [
+		"group/group-power",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"hyprland/workspaces",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"tray",
+		"custom/notification",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"wireplumber",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%d-%m}",
+		"tooltip": false
+	},
+
+	"wireplumber": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume:2}%",
+		"format-muted": "󰸈 {volume:2}%",
+		"format-icons": {
+			"headphones": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pkill pavucontrol || pavucontrol",
+		"on-click-right": "pkill helvum || helvum"
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": " {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"tray": {
+		"icon-size": 20,
+		"reverse-direction": true
+	},
+
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon} ",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": "",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+
+	"group/group-power": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": true
+		},
+		"modules": ["custom/lock", "custom/quit", "custom/reboot", "custom/power"]
+	},
+	"custom/lock": {
+		"format": "󰍁 ",
+		"tooltip": false,
+		"on-click": "swaylock"
+	},
+	"custom/power": {
+		"format": " ",
+		"tooltip": false,
+		"on-click": "shutdown now"
+	},
+	"custom/quit": {
+		"format": "󰗼 ",
+		"tooltip": false,
+		"on-click": "hyprctl dispatch exit"
+	},
+	"custom/reboot": {
+		"format": " ",
+		"tooltip": false,
+		"on-click": "reboot"
+	}
+}
