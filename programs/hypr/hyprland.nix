@@ -14,7 +14,6 @@
   environment.systemPackages = with pkgs; [
     hyprshade
 
-    waybar
     flameshot
     grim
     slurp

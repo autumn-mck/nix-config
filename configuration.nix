@@ -109,6 +109,7 @@
       ./programs/fuzzel.nix
       ./programs/cursor.nix
       ./programs/gtk.nix
+      ./programs/waybar/waybar.nix
     ];
 
     kitty.enable = true;
