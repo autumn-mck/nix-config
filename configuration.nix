@@ -107,6 +107,8 @@
     })
   ];
 
+  programs.command-not-found.enable = false; # broken when using only flakes
+
   # Services
   # services.openssh.enable = true;
 
@@ -140,7 +142,6 @@
     git.enable = true;
     thunderbird.enable = true;
     vscode.enable = true;
-
 
     xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
     xdg.configFile."hypr/hyprlock.conf".source = ./programs/hypr/hyprlock.conf;
