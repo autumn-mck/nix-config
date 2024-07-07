@@ -30,9 +30,19 @@
   boot.loader.systemd-boot.configurationLimit = 20;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  console.catppuccin.enable = true;
+  console.catppuccin.flavor = "macchiato";
+
   networking.hostName = "cherry";
 
   networking.networkmanager.enable = true;
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-macchiato";
+    package = pkgs.kdePackages.sddm;
+  };
 
   users.users.autumn = {
     isNormalUser = true;
@@ -88,6 +98,12 @@
       size = "compact";
       tweaks = [ "rimless" ];
       variant = "macchiato";
+    })
+
+    (catppuccin-sddm.override {
+      flavor = "macchiato";
+      font  = "IBM Plex Sans";
+      fontSize = "16";
     })
   ];
 
