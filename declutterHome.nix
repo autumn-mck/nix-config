@@ -17,6 +17,7 @@
     PASSWORD_STORE_DIR = "${XDG_DATA_HOME}/pass";
     WINEPREFIX = "${XDG_DATA_HOME}/wine";
     CUDA_CACHE_PATH = "${XDG_CACHE_HOME}/nv";
+    DVDCSS_CACHE = "${XDG_DATA_HOME}/dvdcss";
 
     GOPATH = "${XDG_DATA_HOME}/go";
     CARGO_HOME = "${XDG_DATA_HOME}/cargo";
