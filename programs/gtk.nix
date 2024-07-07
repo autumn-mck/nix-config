@@ -1,9 +1,11 @@
-{ home-manager, pkgs, config, ... }:
+{ home-manager, pkgs, config, lib, ... }:
 
 {
-  options = { };
+  options = {
+    gtkTheming.enable = lib.mkEnableOption "gtkTheming";
+  };
 
-  config = {
+  config = lib.mkIf config.gtkTheming.enable {
     gtk = {
       enable = true;
       theme = {

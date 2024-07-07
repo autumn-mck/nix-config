@@ -22,6 +22,7 @@
   distrobox.enable = true;
   hyprland.enable = true;
   mullvad.enable = true;
+  js.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -102,7 +103,7 @@
 
     (catppuccin-sddm.override {
       flavor = "macchiato";
-      font  = "IBM Plex Sans";
+      font = "IBM Plex Sans";
       fontSize = "16";
     })
   ];
@@ -142,6 +143,8 @@
     git.enable = true;
     thunderbird.enable = true;
     vscode.enable = true;
+    librewolf.enable = true;
+    gtkTheming.enable = true;
 
     xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
     xdg.configFile."hypr/hyprlock.conf".source = ./programs/hypr/hyprlock.conf;

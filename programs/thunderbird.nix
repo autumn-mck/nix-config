@@ -13,7 +13,8 @@
         settings = {
           "findbar.highlightAll" = true;
           "privacy.donottrackheader.enabled" = true;
-          "app.donation.eoy.version.viewed" = 10;
+          "app.donation.eoy.version.viewed" = 10; # disable donation popup (i do and have anyway)
+          "mail.tabs.drawInTitlebar" = false;
         };
       };
     };
