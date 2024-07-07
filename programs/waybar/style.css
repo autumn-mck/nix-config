@@ -86,3 +86,7 @@ window#waybar {
 	padding-left: 5px;
 	padding-right: 5px;
 }
+
+#group-power > * > * > * > * {
+	margin-left: 5px;
+}

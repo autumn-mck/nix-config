@@ -132,8 +132,7 @@
 		"orientation": "inherit",
 		"drawer": {
 			"transition-duration": 500,
-			"children-class": "not-power",
-			"transition-left-to-right": true
+			"children-class": "power-children"
 		},
 		"modules": ["custom/lock", "custom/quit", "custom/reboot", "custom/power"]
 	},
@@ -141,11 +140,6 @@
 		"format": "󰍁 ",
 		"tooltip": false,
 		"on-click": "hyprlock"
-	},
-	"custom/power": {
-		"format": " ",
-		"tooltip": false,
-		"on-click": "shutdown now"
 	},
 	"custom/quit": {
 		"format": "󰗼 ",
@@ -156,5 +150,10 @@
 		"format": " ",
 		"tooltip": false,
 		"on-click": "reboot"
+	},
+	"custom/power": {
+		"format": " ",
+		"tooltip": false,
+		"on-click": "shutdown now"
 	}
 }
