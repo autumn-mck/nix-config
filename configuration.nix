@@ -131,6 +131,7 @@
     xdg.configFile."hypr/macchiato.conf".source = ./programs/hypr/macchiato.conf;
     xdg.configFile."hypr/scripts/screenshot.sh".source = ./programs/hypr/screenshot.sh;
     xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./programs/hypr/blue-light-filter.glsl;
+    xdg.configFile."hypr/hyprshade.toml".source = ./programs/hypr/hyprshade.toml;
 
     home.packages = [
     ];
