@@ -28,6 +28,7 @@
         astro-build.astro-vscode
         rust-lang.rust-analyzer
         ms-azuretools.vscode-docker
+        tamasfe.even-better-toml
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
