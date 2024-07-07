@@ -26,6 +26,8 @@
         jnoortheen.nix-ide
         unifiedjs.vscode-mdx
         astro-build.astro-vscode
+        rust-lang.rust-analyzer
+        ms-azuretools.vscode-docker
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
