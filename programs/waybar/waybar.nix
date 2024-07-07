@@ -1,10 +1,16 @@
-{ home-manager, pkgs, lib, ... }:
+{ home-manager, pkgs, lib, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    waybar
-  ];
+  options = {
+    waybar.enable = lib.mkEnableOption "waybar";
+  };
 
-  xdg.configFile."waybar/config.jsonc".source = ./config.jsonc;
-  xdg.configFile."waybar/style.css".source = ./style.css;
+  config = lib.mkIf (config.waybar.enable) {
+    home.packages = with pkgs; [
+      waybar
+    ];
+
+    xdg.configFile."waybar/config.jsonc".source = ./config.jsonc;
+    xdg.configFile."waybar/style.css".source = ./style.css;
+  };
 }

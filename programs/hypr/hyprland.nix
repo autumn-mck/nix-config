@@ -7,52 +7,60 @@
     ./hyprlock.nix
   ];
 
-  programs.hyprland.enable = true;
-  # TODO set up hyprshade
+  options = {
+    hyprland.enable = lib.mkEnableOption "hyprland";
+  };
 
-  # packages for WM stuff
-  environment.systemPackages = with pkgs; [
-    hyprshade
+  config = lib.mkIf (config.hyprland.enable) {
+    programs.hyprland.enable = true;
+    hyprlock.enable = true;
 
-    flameshot
-    grim
-    slurp
-    swappy
-    wl-clipboard
+    # TODO set up hyprshade
 
-    bemoji
-    cliphist
-    wl-clip-persist
+    # packages for WM stuff
+    environment.systemPackages = with pkgs; [
+      hyprshade
 
-    swww
-    waypaper
+      flameshot
+      grim
+      slurp
+      swappy
+      wl-clipboard
 
-    lxqt.lxqt-policykit
+      bemoji
+      cliphist
+      wl-clip-persist
 
-    libsForQt5.dolphin # kde6 version seems to run through xwayland for some reason, kde5 version is fine for now
-    libsForQt5.ark
+      swww
+      waypaper
 
-    lightly-boehs
+      lxqt.lxqt-policykit
 
-    libsForQt5.gwenview
-  ];
+      libsForQt5.dolphin # kde6 version seems to run through xwayland for some reason, kde5 version is fine for now
+      libsForQt5.ark
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      flameshot = prev.flameshot.overrideAttrs (old: {
-        src = prev.fetchFromGitHub {
-          owner = "flameshot-org";
-          repo = "flameshot";
-          rev = "3d21e4967b68e9ce80fb2238857aa1bf12c7b905";
-          hash = "sha256-OLRtF/yjHDN+sIbgilBZ6sBZ3FO6K533kFC1L2peugc=";
-        };
-        NIX_CFLAGS_COMPILE = "-DUSE_WAYLAND_GRIM=1";
-      });
-    })
-  ];
+      lightly-boehs
 
-  environment.sessionVariables = {
-    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # only works with electron 28+
-    NIXOS_OZONE_WL = "1";
+      libsForQt5.gwenview
+    ];
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        flameshot = prev.flameshot.overrideAttrs (old: {
+          src = prev.fetchFromGitHub {
+            owner = "flameshot-org";
+            repo = "flameshot";
+            rev = "3d21e4967b68e9ce80fb2238857aa1bf12c7b905";
+            hash = "sha256-OLRtF/yjHDN+sIbgilBZ6sBZ3FO6K533kFC1L2peugc=";
+          };
+          NIX_CFLAGS_COMPILE = "-DUSE_WAYLAND_GRIM=1";
+        });
+      })
+    ];
+
+    environment.sessionVariables = {
+      ELECTRON_OZONE_PLATFORM_HINT = "auto"; # only works with electron 28+
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }

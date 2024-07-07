@@ -1,10 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  security.pam.services.swaylock = { };
-  security.polkit.enable = true;
+  options = {
+    hyprlock.enable = lib.mkEnableOption "hyprlock";
+  };
 
-  environment.systemPackages = with pkgs; [
-    hyprlock
-  ];
+  config = lib.mkIf (config.hyprlock.enable) {
+    security.pam.services.swaylock = { };
+    security.polkit.enable = true;
+
+    environment.systemPackages = with pkgs; [
+      hyprlock
+    ];
+  };
 }

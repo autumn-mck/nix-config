@@ -20,6 +20,8 @@
 
   fish.enable = true;
   distrobox.enable = true;
+  hyprland.enable = true;
+  mullvad.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -116,6 +118,13 @@
     cursor.enable = true;
     firefox.enable = true;
     fuzzel.enable = true;
+    waybar.enable = true;
+    swaync.enable = true;
+    qtct.enable = true;
+    git.enable = true;
+    thunderbird.enable = true;
+    vscode.enable = true;
+
 
     xdg.configFile."hypr/hyprland.conf".source = ./programs/hypr/hyprland.conf;
     xdg.configFile."hypr/scripts/screenshot.sh".source = ./programs/hypr/screenshot.sh;

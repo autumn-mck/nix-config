@@ -1,58 +1,64 @@
-{ home-manager, pkgs, ... }:
+{ home-manager, pkgs, lib, config, ... }:
 
 {
-  programs.vscode = {
-    enable = true;
-    # sandboxes vscode, which allows extensions to work without additional configuration,
-    # but as a result prevents elevated permissions from being used in the terminal (e.g. sudo)
-    # (might look at this again later, but commented out is fine for now)
-    #package = pkgs.vscode.fhs;
-    extensions = with pkgs.vscode-extensions; [
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
+  options = {
+    vscode.enable = lib.mkEnableOption "vscode";
+  };
 
-      mhutchie.git-graph
+  config = lib.mkIf (config.vscode.enable) {
+    programs.vscode = {
+      enable = true;
+      # sandboxes vscode, which allows extensions to work without additional configuration,
+      # but as a result prevents elevated permissions from being used in the terminal (e.g. sudo)
+      # (might look at this again later, but commented out is fine for now)
+      #package = pkgs.vscode.fhs;
+      extensions = with pkgs.vscode-extensions; [
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
 
-      esbenp.prettier-vscode
+        mhutchie.git-graph
 
-      github.copilot
+        esbenp.prettier-vscode
 
-      coolbear.systemd-unit-file
-      jnoortheen.nix-ide
-      unifiedjs.vscode-mdx
-      astro-build.astro-vscode
-    ];
-    userSettings = {
-      "workbench.colorTheme" = "Catppuccin Macchiato";
-      "workbench.iconTheme" = "catppuccin-macchiato";
+        github.copilot
 
-      "editor.tabSize" = 2;
-      "editor.insertSpaces" = false;
-      "editor.inlineSuggest.enabled" = true;
-      "editor.renderWhitespace" = "trailing";
-      "editor.formatOnSave" = true;
+        coolbear.systemd-unit-file
+        jnoortheen.nix-ide
+        unifiedjs.vscode-mdx
+        astro-build.astro-vscode
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Catppuccin Macchiato";
+        "workbench.iconTheme" = "catppuccin-macchiato";
 
-      "terminal.external.linuxExec" = "kitty";
-      "terminal.integrated.defaultProfile.linux" = "fish";
-      "window.menuBarVisibility" = "toggle";
+        "editor.tabSize" = 2;
+        "editor.insertSpaces" = false;
+        "editor.inlineSuggest.enabled" = true;
+        "editor.renderWhitespace" = "trailing";
+        "editor.formatOnSave" = true;
 
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "prettier.printWidth" = 100;
-      "prettier.bracketSameLine" = true;
-      "prettier.useTabs" = true;
+        "terminal.external.linuxExec" = "kitty";
+        "terminal.integrated.defaultProfile.linux" = "fish";
+        "window.menuBarVisibility" = "toggle";
 
-      "git.autofetch" = true;
-      "git.enableSmartCommit" = true;
-      "git.confirmSync" = false;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "prettier.printWidth" = 100;
+        "prettier.bracketSameLine" = true;
+        "prettier.useTabs" = true;
 
-      "explorer.confirmDragAndDrop" = false;
+        "git.autofetch" = true;
+        "git.enableSmartCommit" = true;
+        "git.confirmSync" = false;
 
-      "[nix]" = {
-        "editor.defaultFormatter" = "jnoortheen.nix-ide";
-      };
+        "explorer.confirmDragAndDrop" = false;
 
-      "[astro]" = {
-        "editor.defaultFormatter" = "astro-build.astro-vscode";
+        "[nix]" = {
+          "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        };
+
+        "[astro]" = {
+          "editor.defaultFormatter" = "astro-build.astro-vscode";
+        };
       };
     };
   };
