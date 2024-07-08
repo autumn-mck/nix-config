@@ -71,6 +71,7 @@
     imagemagick
 
     bottom
+    btop
     tealdeer
     bat
     shellcheck
@@ -91,8 +92,12 @@
 
     jetbrains.rider
     jetbrains.idea-ultimate
+    android-studio
 
     podman-compose
+
+    itch
+    youtube-music
 
     (catppuccin-gtk.override {
       accents = [ "mauve" ];
