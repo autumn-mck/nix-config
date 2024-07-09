@@ -12,6 +12,7 @@
       ./programs/javascript.nix
       ./programs/distrobox.nix
       ./programs/pipewire.nix
+      ./programs/android.nix
       ./declutterHome.nix
       ./bluetooth.nix
       ./desktops/desktop.nix
@@ -23,6 +24,7 @@
   hyprland.enable = true;
   mullvad.enable = true;
   js.enable = true;
+  android.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -92,7 +94,6 @@
 
     jetbrains.rider
     jetbrains.idea-ultimate
-    android-studio
 
     podman-compose
 

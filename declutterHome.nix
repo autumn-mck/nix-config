@@ -31,4 +31,6 @@
     ANDROID_HOME = "${XDG_DATA_HOME}/android/sdk";
     GRADLE_USER_HOME = "${XDG_DATA_HOME}/gradle";
   };
+
+  environment.shellAliases."wget" = "wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\"";
 }
