@@ -62,6 +62,14 @@
     ];
 
     home-manager.users.autumn = {
+      xdg.configFile."hypr/macchiato.conf".source = ./macchiato.conf;
+      xdg.configFile."hypr/scripts/screenshot.sh".source = ./screenshot.sh;
+
+      xdg.configFile."hyprland-autoname-workspaces/config.toml".source = ./autoname.toml;
+
+      xdg.configFile."hypr/hyprshade.toml".source = ./hyprshade.toml;
+      xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./blue-light-filter.glsl;
+
       wayland.windowManager.hyprland = {
         enable = true;
         extraConfig = builtins.readFile ./hyprland.conf;

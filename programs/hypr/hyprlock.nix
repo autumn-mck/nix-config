@@ -12,5 +12,10 @@
     environment.systemPackages = with pkgs; [
       hyprlock
     ];
+
+    home-manager.users.autumn = {
+      xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
+    };
+
   };
 }

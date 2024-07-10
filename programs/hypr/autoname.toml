@@ -1,0 +1,97 @@
+version = "1.1.14"
+
+[format]
+dedup = true
+dedup_inactive_fullscreen = false
+delim = " "
+client = "{icon} "
+client_active = "<span color=\"#c6a0f6\">{icon}</span>"
+workspace = "{id}: {clients}  ­" # invisible unicode char after spaces to keep them from being trimmed
+workspace_empty = "{id}   ­"
+client_dup = "{icon}{counter_sup}{delim}"
+client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
+client_fullscreen = "[{icon} ]{delim}"
+
+[class_active]
+DEFAULT=""
+
+[title_in_class."(firefox|librewolf|chrom.*)"]
+"(?i)youtube" = ""
+"(?i)twitch" = ""
+
+[class]
+DEFAULT = ""
+
+# browsers
+"(?i)firefox" = ""
+"(?i)librewolf" = ""
+chromium = ""
+
+# terminals
+"(?i)kitty" = ""
+"(?i)alacritty" = ""
+
+calibre-gui = ""
+
+# image stuff
+"Gimp-2.10" = ""
+darktable = ""
+krita = ""
+
+swappy = ""
+
+# editors
+code-oss = ""
+code-url-handler = ""
+"jetbrains-studio" = "" # is actually android studio
+"(?i)waydroid.*" = ""
+obsidian = ""
+
+# chat
+discord = ""
+vesktop = ""
+element = ""
+whatsapp-desktop = ""
+
+# gaming
+steam = ""
+itch = ""
+"Minecraft.*" = ""
+"org.prismlauncher.PrismLauncher" = ""
+
+fontforge = ""
+
+# libreoffice
+libreoffice-calc = ""
+libreoffice-impress = ""
+libreoffice-startcenter = ""
+libreoffice-writer = ""
+
+# video
+mpv = ""
+vlc = ""
+
+# music
+spotify = ""
+"musicbee.exe" = ""
+
+# email
+thunderbird = ""
+neomutt = ""
+
+# file managers
+dolphin = ""
+
+# other
+waypaper = ""
+Bitwarden = ""
+"Mullvad VPN" = ""
+
+nm-connection-editor = ""
+org-ksnip-ksnip = ""
+pavucontrol = ""
+wire = "󰁀"
+wireshark-gtk = ""
+
+[exclude]
+"" = "^$" # prevent displaying clients with empty class
