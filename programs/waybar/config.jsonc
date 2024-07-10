@@ -55,11 +55,6 @@
 		"tooltip": false
 	},
 
-	"sway/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}"
-	},
-
 	"clock#1": {
 		"format": "{:%a}",
 		"tooltip": false
