@@ -21,11 +21,17 @@
 
         "security.OCSP.require" = false; # breaks with vpn
 
+        "browser.contentblocking.category" = "strict";
         "privacy.trackingprotection.enabled" = true;
         "privacy.trackingprotection.socialtracking.enabled" = true;
         "privacy.trackingprotection.emailtracking.enabled" = true;
         "privacy.fingerprintingProtection" = true;
         "privacy.donottrackheader.enabled" = true;
+        "privacy.globalprivacycontrol.enabled" = true;
+
+        "privacy.clearOnShutdown.cookies" = false;
+        "privacy.clearOnShutdown.cache" = false;
+        "privacy.clearOnShutdown.offlineApps" = false;
 
         "browser.toolbars.bookmarks.visibility" = "never";
         "browser.tabs.inTitlebar" = 0;
@@ -34,3 +40,4 @@
     };
   };
 }
+
