@@ -42,6 +42,9 @@
       lightly-boehs
 
       libsForQt5.gwenview
+
+      hyprnome
+      hyprland-autoname-workspaces
     ];
 
     nixpkgs.overlays = [
@@ -58,9 +61,18 @@
       })
     ];
 
+    home-manager.users.autumn = {
+      wayland.windowManager.hyprland = {
+        enable = true;
+        extraConfig = builtins.readFile ./hyprland.conf;
+        plugins = [ ];
+      };
+    };
+
     environment.sessionVariables = {
       ELECTRON_OZONE_PLATFORM_HINT = "auto"; # only works with electron 28+
       NIXOS_OZONE_WL = "1";
     };
+
   };
 }
