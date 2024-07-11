@@ -5,12 +5,17 @@
     [
       ./hardware/cherry/hardware.nix
       home-manager.nixosModules.default
+
       ./declutterHome.nix
-      ./bluetooth.nix
-      ./desktops/desktop.nix
-      ./desktops/cherry/cherry.nix
+
       ./programs/programs.nix
+      ./desktops/desktop.nix
+      ./server/server.nix
     ];
+
+  networking.hostName = "cherry";
+  isDesktop = true;
+  isServer = false;
 
   fish.enable = true;
   distrobox.enable = true;
@@ -19,23 +24,20 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.loader.systemd-boot.configurationLimit = 20;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # theme the tty
   console.catppuccin.enable = true;
   console.catppuccin.flavor = "macchiato";
-
-  networking.hostName = "cherry";
 
   users.users.autumn = {
     isNormalUser = true;
     description = "autumn";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" ];
     packages = with pkgs; [ ];
   };
 
-  # Allow unfree packages
+  # nix settings
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -84,8 +86,6 @@
     nixpkgs-fmt
 
     podman-compose
-
-    material-icons
   ];
 
   environment.sessionVariables = {

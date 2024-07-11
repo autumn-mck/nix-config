@@ -11,6 +11,7 @@
     ./pipewire.nix
     ./android.nix
     ./sddm.nix
+    ./caddy.nix
   ];
 
   home-manager.users.autumn = {

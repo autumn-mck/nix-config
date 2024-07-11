@@ -1,14 +1,18 @@
-{ config, home-manager, pkgs, ... }:
+{ config, home-manager, pkgs, lib, ... }:
 
 {
   imports = [
     ./config/fonts.nix
     ./config/locale.nix
+    ./bluetooth.nix
+    ./cherry/cherry.nix
   ];
 
-  options = { };
+  options = {
+    isDesktop = lib.mkEnableOption "isDesktop";
+  };
 
-  config = {
+  config = lib.mkIf (config.isDesktop) {
     environment.systemPackages = with pkgs; [
       # image stuff
       inkscape
@@ -54,8 +58,6 @@
       desktop-file-utils # utils for .desktop files
       brightnessctl
 
-      networkmanagerapplet
-
       # audio
       pavucontrol
       pamixer
@@ -71,7 +73,13 @@
       jetbrains.rider
       jetbrains.idea-ultimate
       godot_4
+
+      # misc
+      networkmanagerapplet
+      material-icons
     ];
+
+    bluetooth.enable = true;
 
     programs.steam.enable = true;
 

@@ -6,6 +6,8 @@
     ./hardware-configuration.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   services.fwupd.enable = true;
 
   # only for installing an unsigned beta firmware (eg. 3.03b), not generally needed

@@ -3,7 +3,7 @@
 {
   options = { };
 
-  config = {
+  config = lib.mkIf (config.isDesktop) {
     fonts = {
       packages = with pkgs; [
         twitter-color-emoji
