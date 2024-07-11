@@ -77,6 +77,7 @@
       # misc
       networkmanagerapplet
       material-icons
+      kdePackages.breeze
     ];
 
     bluetooth.enable = true;
