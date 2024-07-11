@@ -16,5 +16,14 @@
         ./configuration.nix
       ];
     };
+
+    nixosConfigurations.rowan = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      specialArgs = attrs;
+      modules = [
+        catppuccin.nixosModules.catppuccin
+        ./configuration.nix
+      ];
+    };
   };
 }
