@@ -10,61 +10,79 @@
 
   config = {
     environment.systemPackages = with pkgs; [
+      # image stuff
       inkscape
+      gimp
 
-      xdg-utils
-      desktop-file-utils # utils for .desktop files
-
+      # office
       libreoffice
       hunspell # spell checker
       hunspellDicts.en-gb-ise
 
-      bitwarden-desktop
-      vlc
-      gimp
-
+      # wine
       winetricks
-      wine-staging # i can't tell what the difference between all the different nix wine packages are, but i tested this one and works for musicbee so good enough
+      wine-staging # idk what the difference between all the different wine packages are, but this one works for musicbee so good enough
 
-      qbittorrent
-      godot_4
+      # video
       handbrake
       obs-studio
-      gimp
-      vesktop
+      vlc
+
+      # gaming
+      # steam is enabled below
       prismlauncher
       dolphin-emu
-      #itch
-      slipstream
-      protonmail-bridge
-      cava
-      ungoogled-chromium
+      itch
+      slipstream # FTL mod manager, run from command line
 
+      # communication
+      vesktop
+      protonmail-bridge
+      # thunderbird is managed by home-manager
+
+      # browsers
+      ungoogled-chromium
+      # librewolf and firefox are both managed by home-manager
+
+      # utils
       gparted
       kdePackages.partitionmanager
+      bitwarden-desktop
 
-      networkmanagerapplet
+      # command line utils
+      xdg-utils
+      desktop-file-utils # utils for .desktop files
       brightnessctl
 
+      networkmanagerapplet
+
+      # audio
       pavucontrol
       pamixer
       helvum # pipewire graph patchbay thing
+      cava
+      youtube-music
 
+      # linux isos
       qbittorrent
 
+      # editors
+      # vscode managed by home manager
       jetbrains.rider
       jetbrains.idea-ultimate
-
-      (catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "compact";
-        tweaks = [ "rimless" "normal" ];
-        variant = "macchiato";
-      })
+      godot_4
     ];
 
-    services.printing.enable = true;
+    programs.steam.enable = true;
 
+    android.enable = true;
+    pipewire.enable = true;
+    sddm.enable = true;
+    syncthing.enable = true;
+    hyprland.enable = true;
+    mullvad.enable = true;
+
+    services.printing.enable = true;
     services.gnome.gnome-keyring.enable = true;
 
     services.avahi = {
@@ -73,10 +91,18 @@
       openFirewall = true;
     };
 
-    programs.steam.enable = true;
-
     home-manager.users.autumn = {
       kitty.enable = true;
+      cursor.enable = true;
+      firefox.enable = true;
+      fuzzel.enable = true;
+      waybar.enable = true;
+      swaync.enable = true;
+      qtct.enable = true;
+      thunderbird.enable = true;
+      vscode.enable = true;
+      librewolf.enable = true;
+      gtkTheming.enable = true;
 
       xdg = {
         enable = true;

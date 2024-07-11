@@ -5,7 +5,7 @@
     pipewire.enable = lib.mkEnableOption "pipewire";
   };
 
-  config = {
+  config = lib.mkIf config.pipewire.enable {
     services.pipewire = {
       enable = true;
       pulse.enable = true;

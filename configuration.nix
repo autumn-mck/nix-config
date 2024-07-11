@@ -5,26 +5,16 @@
     [
       ./hardware/cherry/hardware.nix
       home-manager.nixosModules.default
-      ./programs/hypr/hyprland.nix
-      ./programs/mullvad.nix
-      ./programs/fish.nix
-      ./programs/syncthing.nix
-      ./programs/javascript.nix
-      ./programs/distrobox.nix
-      ./programs/pipewire.nix
-      ./programs/android.nix
       ./declutterHome.nix
       ./bluetooth.nix
       ./desktops/desktop.nix
       ./desktops/cherry/cherry.nix
+      ./programs/programs.nix
     ];
 
   fish.enable = true;
   distrobox.enable = true;
-  hyprland.enable = true;
-  mullvad.enable = true;
   js.enable = true;
-  android.enable = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -37,15 +27,6 @@
   console.catppuccin.flavor = "macchiato";
 
   networking.hostName = "cherry";
-
-  networking.networkmanager.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-macchiato";
-    package = pkgs.kdePackages.sddm;
-  };
 
   users.users.autumn = {
     isNormalUser = true;
@@ -61,8 +42,11 @@
     use-xdg-base-directories = true;
   };
 
+  programs.command-not-found.enable = false; # broken when using only flakes
+
   # Packages
   environment.systemPackages = with pkgs; [
+    # pretty important
     git
     unzip
     p7zip
@@ -72,94 +56,46 @@
 
     imagemagick
 
+    # system monitoring
     bottom
     btop
+
+    # useful utils
+    shellcheck
+    whois
+
     tealdeer
     bat
-    shellcheck
-    tree
 
+    # rust
     cargo
     rustc
 
+    # dotnet stuff
     dotnet-sdk_8
     dotnet-runtime_8
     dotnet-aspnetcore_8
 
-    whois
-    xdg-ninja
+    # benchmarking
     geekbench
 
+    # unimportant utils
+    xdg-ninja
     nixpkgs-fmt
-
-    jetbrains.rider
-    jetbrains.idea-ultimate
 
     podman-compose
 
-    itch
-    youtube-music
-
     material-icons
-
-    (catppuccin-gtk.override {
-      accents = [ "mauve" ];
-      size = "compact";
-      tweaks = [ "rimless" ];
-      variant = "macchiato";
-    })
-
-    (catppuccin-sddm.override {
-      flavor = "macchiato";
-      font = "IBM Plex Sans";
-      fontSize = "16";
-    })
   ];
 
-  programs.command-not-found.enable = false; # broken when using only flakes
-
-  # Services
-  # services.openssh.enable = true;
+  environment.sessionVariables = {
+    DOTNET_CLI_TELEMETRY_OPTOUT = "1";
+  };
 
   home-manager.useGlobalPkgs = true;
   home-manager.users.autumn = {
     home.stateVersion = "23.11";
-
-    imports = [
-      ./programs/vscode.nix
-      ./programs/firefox.nix
-      ./programs/librewolf.nix
-      ./programs/thunderbird.nix
-      ./programs/hyfetch/hyfetch.nix
-      ./programs/kitty.nix
-      ./programs/git.nix
-      ./programs/swaync/swaync.nix
-      ./programs/qtct/qtct.nix
-      ./programs/fuzzel.nix
-      ./programs/cursor.nix
-      ./programs/gtk.nix
-      ./programs/waybar/waybar.nix
-    ];
-
-    kitty.enable = true;
-    cursor.enable = true;
-    firefox.enable = true;
-    fuzzel.enable = true;
-    waybar.enable = true;
-    swaync.enable = true;
-    qtct.enable = true;
     git.enable = true;
-    thunderbird.enable = true;
-    vscode.enable = true;
-    librewolf.enable = true;
-    gtkTheming.enable = true;
-
-    home.packages = [
-    ];
-  };
-
-  environment.sessionVariables = {
-    DOTNET_CLI_TELEMETRY_OPTOUT = "1";
   };
 
   # This value determines the NixOS release from which the default
