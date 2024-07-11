@@ -9,11 +9,11 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Macchiato-Compact-Mauve-Dark";
+        name = "catppuccin-macchiato-mauve-compact+rimless,normal";
         package = pkgs.catppuccin-gtk.override {
           accents = [ "mauve" ];
           size = "compact";
-          tweaks = [ "rimless" ];
+          tweaks = [ "rimless" "normal" ];
           variant = "macchiato";
         };
       };

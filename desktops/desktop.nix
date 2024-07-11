@@ -58,7 +58,7 @@
       (catppuccin-gtk.override {
         accents = [ "mauve" ];
         size = "compact";
-        tweaks = [ "rimless" ];
+        tweaks = [ "rimless" "normal" ];
         variant = "macchiato";
       })
     ];
