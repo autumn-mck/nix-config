@@ -13,6 +13,9 @@
   };
 
   config = lib.mkIf (config.isDesktop) {
+    networking.networkmanager.enable = true;
+    users.users.autumn.extraGroups = [ "networkmanager" ];
+
     environment.systemPackages = with pkgs; [
       # image stuff
       inkscape
