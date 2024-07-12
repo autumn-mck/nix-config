@@ -14,6 +14,17 @@
       modules = [
         catppuccin.nixosModules.catppuccin
         ./configuration.nix
+        ./hardware/cherry/hardware.nix
+      ];
+    };
+
+    nixosConfigurations.hawthorn = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = attrs;
+      modules = [
+        catppuccin.nixosModules.catppuccin
+        ./configuration.nix
+        ./hardware/hawthorn/hardware.nix
       ];
     };
 
@@ -23,6 +34,7 @@
       modules = [
         catppuccin.nixosModules.catppuccin
         ./configuration.nix
+        ./hardware/rowan/hardware.nix
       ];
     };
   };

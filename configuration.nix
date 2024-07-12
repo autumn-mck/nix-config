@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ./hardware/cherry/hardware.nix
       home-manager.nixosModules.default
 
       ./declutterHome.nix
