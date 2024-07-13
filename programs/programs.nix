@@ -12,6 +12,7 @@
     ./android.nix
     ./sddm.nix
     ./caddy.nix
+    ./forgejo.nix
   ];
 
   home-manager.users.autumn = {

@@ -6,6 +6,7 @@
     ];
 
     caddy.enable = true;
+    forgejo.enable = true;
     services.caddy = {
       virtualHosts."music-display.autumn.is" = {
         extraConfig = ''
