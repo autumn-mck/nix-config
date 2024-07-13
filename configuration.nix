@@ -29,6 +29,8 @@
   console.catppuccin.enable = true;
   console.catppuccin.flavor = "macchiato";
 
+  programs.nix-ld.enable = true;
+
   users.users.autumn = {
     isNormalUser = true;
     description = "autumn";
