@@ -1,4 +1,8 @@
-{ config, lib, ... }: {
+{ config, lib, home-manager, ... }:
+let
+  folders = config.services.syncthing.settings.folders;
+in
+{
   options = {
     syncthing.enable = lib.mkEnableOption "syncthing";
   };
@@ -50,6 +54,10 @@
           devices = [ "birch" ];
         };
       };
+    };
+
+    home-manager.users.autumn = {
+      home.file."${folders."upigg-w6x5l".path}/.stignore".source = ./stignore;
     };
   };
 }

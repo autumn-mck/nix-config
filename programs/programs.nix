@@ -5,7 +5,7 @@
     ./hypr/hyprland.nix
     ./mullvad.nix
     ./fish.nix
-    ./syncthing.nix
+    ./syncthing/syncthing.nix
     ./javascript.nix
     ./distrobox.nix
     ./pipewire.nix
