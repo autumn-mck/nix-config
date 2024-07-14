@@ -15,7 +15,6 @@
 
       settings.devices = {
         "ash" = { id = "IDPBWDT-5KWVAM7-S4PBX5T-PJN4BYI-SMXS5A7-QFNQRO5-ADRXPSK-AYZOAQT"; };
-        "hazel" = { id = "KKYBFUF-45PZX63-5INJFI2-YAWLHGI-D63E3SN-5REEN4C-5UZF2BL-WF5UWAC"; };
         "birch" = { id = "A2ORYU3-3LNBGBU-EZGFMJT-UJQ6WEG-N54TFGO-DY6IOLM-NSUD7NK-XX5ZRAU"; };
         "mangrove" = { id = "FPVUK6F-OIHAEEV-L3API4Q-WSLAPXF-H3RH32R-AOD2FTX-QPYEAJH-NDE7XAG"; };
       };
@@ -24,19 +23,19 @@
         "qg4t0-4eepi" = {
           label = "AndroidCamera";
           path = "/home/autumn/Pictures/AndroidCamera";
-          devices = [ "ash" "hazel" "birch" "mangrove" ];
+          devices = [ "ash" "birch" "mangrove" ];
         };
 
         "upigg-w6x5l" = {
           label = "Desktop";
           path = "/home/autumn/Desktop";
-          devices = [ "ash" "hazel" "birch" "mangrove" ];
+          devices = [ "ash" "birch" "mangrove" ];
         };
 
         "kjmaq-xt5wt" = {
           label = "MusicMain";
           path = "/home/autumn/Music/MusicMain";
-          devices = [ "ash" "hazel" "birch" "mangrove" ];
+          devices = [ "ash" "birch" "mangrove" ];
         };
 
         "3yaff-abx57" = {
