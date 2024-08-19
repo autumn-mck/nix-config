@@ -55,6 +55,7 @@
       gparted
       kdePackages.partitionmanager
       bitwarden-desktop
+      amdgpu_top
 
       # command line utils
       xdg-utils
@@ -81,6 +82,7 @@
       networkmanagerapplet
       material-icons
       kdePackages.breeze
+      obsidian
     ];
 
     bluetooth.enable = true;
