@@ -46,6 +46,7 @@
       vesktop
       protonmail-bridge
       # thunderbird is managed by home-manager
+      teams-for-linux
 
       # browsers
       ungoogled-chromium
