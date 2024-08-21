@@ -16,6 +16,9 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
 
+        ms-vscode-remote.remote-ssh
+        ms-vscode-remote.remote-ssh-edit
+
         mhutchie.git-graph
 
         esbenp.prettier-vscode
