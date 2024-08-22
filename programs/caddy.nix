@@ -11,6 +11,7 @@
       email = "caddy@autumn.is";
     };
 
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    networking.firewall.allowedTCPPorts = [ 80 443 25565 ];
+    networking.firewall.allowedUDPPorts = [ 19132 ];
   };
 }
