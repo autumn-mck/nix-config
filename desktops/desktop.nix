@@ -47,6 +47,7 @@
       protonmail-bridge
       # thunderbird is managed by home-manager
       teams-for-linux
+      whatsapp-for-linux
 
       # browsers
       ungoogled-chromium
