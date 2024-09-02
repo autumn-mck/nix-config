@@ -32,6 +32,7 @@
         rust-lang.rust-analyzer
         ms-azuretools.vscode-docker
         tamasfe.even-better-toml
+        bierner.comment-tagged-templates
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
