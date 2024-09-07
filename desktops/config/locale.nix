@@ -16,7 +16,7 @@
   };
 
   config = {
-    time.timeZone = "Europe/Warsaw";
+    time.timeZone = "Europe/Prague";
 
     i18n.defaultLocale = config.locale;
     i18n.extraLocaleSettings = {
