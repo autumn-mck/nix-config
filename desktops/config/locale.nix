@@ -16,7 +16,7 @@
   };
 
   config = {
-    time.timeZone = "Europe/Prague";
+    time.timeZone = "Europe/Belfast";
 
     i18n.defaultLocale = config.locale;
     i18n.extraLocaleSettings = {
