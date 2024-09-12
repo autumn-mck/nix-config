@@ -25,6 +25,7 @@
       libreoffice
       hunspell # spell checker
       hunspellDicts.en-gb-ise
+      okular # pdf/epub/djvu viewer
 
       # wine
       winetricks
@@ -94,6 +95,8 @@
     android.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
+    services.desktopManager.cosmic.enable = true;
+    #services.displayManager.cosmic-greeter.enable = true;
     syncthing.enable = true;
     hyprland.enable = true;
     mullvad.enable = true;
