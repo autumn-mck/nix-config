@@ -9,13 +9,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, catppuccin, nixos-cosmic, ... }@attrs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, nixos-cosmic, ... }@attrs: {
     nixosConfigurations.cherry = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
@@ -28,6 +34,14 @@
         }
         nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        }
+
         ./configuration.nix
         ./hardware/cherry/hardware.nix
       ];

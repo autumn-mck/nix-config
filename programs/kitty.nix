@@ -21,6 +21,7 @@
 
       settings = {
         background_opacity = "0.8";
+        background_blur = "8";
         shell = config.kitty.defaultShell;
       };
     };

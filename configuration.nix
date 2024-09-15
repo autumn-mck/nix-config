@@ -94,6 +94,7 @@
   };
 
   home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.users.autumn = {
     home.stateVersion = "23.11";
     git.enable = true;

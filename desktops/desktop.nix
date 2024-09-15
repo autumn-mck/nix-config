@@ -59,6 +59,7 @@
       kdePackages.partitionmanager
       bitwarden-desktop
       amdgpu_top
+      usbutils
 
       # command line utils
       xdg-utils
@@ -86,6 +87,11 @@
       material-icons
       kdePackages.breeze
       obsidian
+
+      (catppuccin-kde.override {
+        flavour = [ "macchiato" ];
+        accents = [ "mauve" ];
+      })
     ];
 
     bluetooth.enable = true;
@@ -95,6 +101,10 @@
     android.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
+
+    services.xserver.enable = true;
+    services.desktopManager.plasma6.enable = true;
+
     services.desktopManager.cosmic.enable = true;
     #services.displayManager.cosmic-greeter.enable = true;
     syncthing.enable = true;
@@ -122,6 +132,7 @@
       vscode.enable = true;
       librewolf.enable = true;
       gtkTheming.enable = true;
+      kde.enable = true;
 
       xdg = {
         enable = true;
@@ -160,6 +171,11 @@
             # vscode for text files, csv files, etc
             "text/plain" = "code.desktop";
             "text/csv" = "code.desktop";
+            "application/json" = "code.desktop";
+            "application/xml" = "code.desktop";
+            "application/x-yaml" = "code.desktop";
+            "text/x-cmake" = "code.desktop";
+            "text/markdown" = "code.desktop";
           };
         };
       };

@@ -30,6 +30,7 @@
       ./cursor.nix
       ./gtk.nix
       ./waybar/waybar.nix
+      ./kde.nix
     ];
   };
 }
