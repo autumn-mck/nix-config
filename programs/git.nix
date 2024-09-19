@@ -12,6 +12,7 @@
       userName = "Autumn McKee";
       extraConfig = {
         init.defaultBranch = "main";
+        # http.sslVerify = false; # occasionally needed when cloning stuff from EEECS gitlab
       };
     };
   };
