@@ -62,6 +62,7 @@
         "explorer.confirmDragAndDrop" = false;
 
         "java.home" = "/run/current-system/sw/lib/openjdk";
+        "redhat.telemetry.enabled" = false;
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
