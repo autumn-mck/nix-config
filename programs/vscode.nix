@@ -33,6 +33,8 @@
         ms-azuretools.vscode-docker
         tamasfe.even-better-toml
         bierner.comment-tagged-templates
+        vscjava.vscode-java-pack
+        redhat.java
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
@@ -58,6 +60,8 @@
         "git.confirmSync" = false;
 
         "explorer.confirmDragAndDrop" = false;
+
+        "java.home" = "/run/current-system/sw/lib/openjdk";
 
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";

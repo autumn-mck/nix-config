@@ -87,6 +87,7 @@
       material-icons
       kdePackages.breeze
       obsidian
+      jdk
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
