@@ -56,6 +56,7 @@
     unrar
     curl
     wget
+    fzf
 
     imagemagick
 
