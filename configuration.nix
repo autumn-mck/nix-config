@@ -57,6 +57,7 @@
     curl
     wget
     fzf
+    nvd
 
     imagemagick
 
