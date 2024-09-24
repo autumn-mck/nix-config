@@ -12,6 +12,8 @@
       theme = "catppuccin-macchiato";
     };
 
+    services.displayManager.defaultSession = "hyprland";
+
     environment.systemPackages = with pkgs; [
       (catppuccin-sddm.override {
         flavor = "macchiato";
