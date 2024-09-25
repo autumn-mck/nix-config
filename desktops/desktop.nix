@@ -88,6 +88,8 @@
       kdePackages.breeze
       obsidian
       jdk
+      pandoc
+      texlive.combined.scheme-small
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
