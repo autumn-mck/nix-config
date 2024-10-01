@@ -51,7 +51,22 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
+        {
+          nix.settings = {
+            substituters = [ "https://cosmic.cachix.org/" ];
+            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+          };
+        }
+        nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        }
+
         ./configuration.nix
         ./hardware/hawthorn/hardware.nix
       ];
@@ -61,7 +76,22 @@
       system = "aarch64-linux";
       specialArgs = attrs;
       modules = [
+        {
+          nix.settings = {
+            substituters = [ "https://cosmic.cachix.org/" ];
+            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+          };
+        }
+        nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+        }
+
         ./configuration.nix
         ./hardware/rowan/hardware.nix
       ];
