@@ -114,7 +114,7 @@
     hyprland.enable = true;
     mullvad.enable = true;
 
-    services.printing.enable = true;
+    services.printing.enable = false;
     services.gnome.gnome-keyring.enable = true;
 
     services.avahi = {
