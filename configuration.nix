@@ -87,6 +87,8 @@
     # unimportant utils
     xdg-ninja
     nixpkgs-fmt
+    gnumake
+    zip
     unimatrix
 
     podman-compose
