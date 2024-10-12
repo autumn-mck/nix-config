@@ -16,6 +16,9 @@
     networking.networkmanager.enable = true;
     users.users.autumn.extraGroups = [ "networkmanager" ];
 
+    boot.kernelModules = [ "i2c-dev" ];
+    hardware.i2c.enable = true;
+
     environment.systemPackages = with pkgs; [
       # image stuff
       inkscape
@@ -65,6 +68,7 @@
       xdg-utils
       desktop-file-utils # utils for .desktop files
       brightnessctl
+      ddcutil
 
       # audio
       pavucontrol
