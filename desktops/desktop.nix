@@ -105,6 +105,8 @@
 
     programs.steam.enable = true;
 
+    services.cpupower-gui.enable = true;
+
     android.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
