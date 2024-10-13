@@ -43,6 +43,7 @@
         "editor.inlineSuggest.enabled" = true;
         "editor.renderWhitespace" = "trailing";
         "editor.formatOnSave" = true;
+        "editor.wordWrap" = "on";
 
         "terminal.external.linuxExec" = "kitty";
         "terminal.integrated.defaultProfile.linux" = "fish";
