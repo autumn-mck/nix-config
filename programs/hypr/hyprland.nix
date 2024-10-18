@@ -21,7 +21,6 @@
     environment.systemPackages = with pkgs; [
       hyprshade
 
-      flameshot
       grim
       slurp
       swappy
@@ -45,20 +44,6 @@
 
       hyprnome
       hyprland-autoname-workspaces
-    ];
-
-    nixpkgs.overlays = [
-      (final: prev: {
-        flameshot = prev.flameshot.overrideAttrs (old: {
-          src = prev.fetchFromGitHub {
-            owner = "flameshot-org";
-            repo = "flameshot";
-            rev = "3d21e4967b68e9ce80fb2238857aa1bf12c7b905";
-            hash = "sha256-OLRtF/yjHDN+sIbgilBZ6sBZ3FO6K533kFC1L2peugc=";
-          };
-          NIX_CFLAGS_COMPILE = "-DUSE_WAYLAND_GRIM=1";
-        });
-      })
     ];
 
     home-manager.users.autumn = {
