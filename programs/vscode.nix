@@ -33,6 +33,8 @@
         bierner.comment-tagged-templates
         vscjava.vscode-java-pack
         redhat.java
+        ms-python.python
+        ms-python.vscode-pylance
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
