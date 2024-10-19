@@ -94,6 +94,7 @@
       jdk
       pandoc
       texlive.combined.scheme-small
+      gnome-boxes
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
@@ -106,6 +107,12 @@
     programs.steam.enable = true;
 
     services.cpupower-gui.enable = true;
+
+    virtualisation.virtualbox.host.enable = true;
+    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
+    virtualisation.virtualbox.guest.enable = true;
+    virtualisation.virtualbox.guest.dragAndDrop = true;
 
     android.enable = true;
     pipewire.enable = true;
