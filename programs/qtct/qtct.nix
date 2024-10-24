@@ -7,7 +7,7 @@
 
   config = lib.mkIf (config.qtct.enable) {
     home.packages = with pkgs; [
-      qt5ct
+      libsForQt5.qt5ct
       qt6ct
     ];
 
