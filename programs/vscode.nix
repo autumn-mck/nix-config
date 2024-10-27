@@ -62,6 +62,8 @@
 
         "explorer.confirmDragAndDrop" = false;
 
+        "MATLAB.showFeatureNotAvailableError" = false;
+
         "java.home" = "/run/current-system/sw/lib/openjdk";
         "redhat.telemetry.enabled" = false;
 
