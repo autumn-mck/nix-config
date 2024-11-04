@@ -14,7 +14,7 @@
 
   config = lib.mkIf (config.isDesktop) {
     networking.networkmanager.enable = true;
-    users.users.autumn.extraGroups = [ "networkmanager" ];
+    users.users.autumn.extraGroups = [ "networkmanager" "libvirtd" ];
 
     boot.kernelModules = [ "i2c-dev" ];
     hardware.i2c.enable = true;
@@ -113,6 +113,8 @@
       '';
     };
 
+    virtualisation.libvirtd.enable = true;
+    virtualisation.spiceUSBRedirection.enable = true;
 
     programs.steam.enable = true;
 
