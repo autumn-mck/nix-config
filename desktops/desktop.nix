@@ -95,6 +95,7 @@
       pandoc
       texlive.combined.scheme-small
       gnome-boxes
+      python3
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
