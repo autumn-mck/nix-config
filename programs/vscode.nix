@@ -67,6 +67,8 @@
         "java.home" = "/run/current-system/sw/lib/openjdk";
         "redhat.telemetry.enabled" = false;
 
+        "python.analysis.typeCheckingMode" = "basic";
+
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
         };
