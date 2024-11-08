@@ -35,6 +35,7 @@
         redhat.java
         ms-python.python
         ms-python.vscode-pylance
+        tomoki1207.pdf
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
