@@ -17,6 +17,7 @@
     users.users.autumn.extraGroups = [ "networkmanager" "libvirtd" ];
 
     boot.kernelModules = [ "i2c-dev" ];
+    boot.supportedFilesystems = [ "ntfs" ];
     hardware.i2c.enable = true;
 
     environment.systemPackages = with pkgs; [
