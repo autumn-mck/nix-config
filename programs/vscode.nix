@@ -36,6 +36,7 @@
         ms-python.python
         ms-python.vscode-pylance
         tomoki1207.pdf
+        tamasfe.even-better-toml
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Macchiato";
