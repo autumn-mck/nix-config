@@ -90,6 +90,7 @@
     gnumake
     zip
     unimatrix
+    nix-index
 
     podman-compose
   ];
