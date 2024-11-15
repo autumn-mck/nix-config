@@ -75,6 +75,10 @@
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
         };
 
+        "[toml]" = {
+          "editor.defaultFormatter" = "tamasfe.even-better-toml";
+        };
+
         "[astro]" = {
           "editor.defaultFormatter" = "astro-build.astro-vscode";
         };
