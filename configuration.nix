@@ -91,6 +91,8 @@
     zip
     unimatrix
     nix-index
+    nmap
+    ldns
 
     podman-compose
   ];
