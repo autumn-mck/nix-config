@@ -14,7 +14,7 @@
 
   config = lib.mkIf (config.isDesktop) {
     networking.networkmanager.enable = true;
-    users.users.autumn.extraGroups = [ "networkmanager" "libvirtd" ];
+    users.users.autumn.extraGroups = [ "networkmanager" "libvirtd" "dialout" ];
 
     boot.kernelModules = [ "i2c-dev" ];
     boot.supportedFilesystems = [ "ntfs" ];
@@ -97,6 +97,7 @@
       texlive.combined.scheme-small
       gnome-boxes
       python3
+      tio
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
