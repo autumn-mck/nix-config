@@ -98,6 +98,7 @@
       gnome-boxes
       python3
       tio
+      kdiskmark
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
