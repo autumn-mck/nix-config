@@ -14,7 +14,7 @@
   config = lib.mkIf config.kitty.enable {
     programs.kitty = {
       enable = true;
-      theme = "Catppuccin-Macchiato";
+      themeFile = "Catppuccin-Macchiato";
       environment = {
         "SHELL" = config.kitty.defaultShell;
       };
