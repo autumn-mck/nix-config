@@ -7,7 +7,7 @@
     fonts = {
       packages = with pkgs; [
         twitter-color-emoji
-        (nerdfonts.override { fonts = [ "Mononoki" ]; })
+        nerd-fonts.mononoki
         ibm-plex
         mononoki
       ];
