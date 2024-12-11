@@ -10,18 +10,21 @@
     services.caddy = {
       virtualHosts."music-display.autumn.is" = {
         extraConfig = ''
+          encode gzip
           reverse_proxy localhost:3000
         '';
       };
 
       virtualHosts."music-display.mck.is" = {
         extraConfig = ''
+          encode gzip
           reverse_proxy localhost:3000
         '';
       };
 
       virtualHosts."http://music-display.mck.is" = {
         extraConfig = ''
+          encode gzip
           reverse_proxy localhost:3000
         '';
       };
