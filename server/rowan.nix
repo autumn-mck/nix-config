@@ -28,6 +28,13 @@
           reverse_proxy localhost:3000
         '';
       };
+
+
+      virtualHosts."gnss.mck.is" = {
+        extraConfig = ''
+          reverse_proxy localhost:1883
+        '';
+      };
     };
   };
 }

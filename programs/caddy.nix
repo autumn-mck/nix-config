@@ -11,7 +11,21 @@
       email = "caddy@autumn.is";
     };
 
-    networking.firewall.allowedTCPPorts = [ 80 443 25565 ];
-    networking.firewall.allowedUDPPorts = [ 19132 ];
+    networking.firewall.allowedTCPPorts = [
+      # http stuff
+      80
+      443
+
+      # minecraft
+      25565
+
+      # mqtt
+      1883
+      9001
+    ];
+    networking.firewall.allowedUDPPorts = [
+      # minecraft bedrock
+      19132
+    ];
   };
 }
