@@ -35,6 +35,12 @@
           reverse_proxy localhost:1883
         '';
       };
+
+      virtualHosts."wopr.mck.is" = {
+        extraConfig = ''
+          reverse_proxy localhost:1983
+        '';
+      };
     };
   };
 }
