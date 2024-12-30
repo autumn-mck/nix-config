@@ -26,8 +26,10 @@
   boot.loader.systemd-boot.configurationLimit = 20;
 
   # theme the tty
-  console.catppuccin.enable = true;
-  console.catppuccin.flavor = "macchiato";
+  catppuccin.tty = {
+    enable = true;
+    flavor = "macchiato";
+  };
 
   programs.nix-ld.enable = true;
 
