@@ -10,6 +10,7 @@
         nerd-fonts.mononoki
         ibm-plex
         mononoki
+        vistafonts
       ];
 
       fontDir.enable = true;
