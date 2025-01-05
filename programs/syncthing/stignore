@@ -1,3 +1,5 @@
 (?d).git
 (?d)node_modules
 (?d)desktop.ini
+(?d)__pycache__
+(?d).venv
