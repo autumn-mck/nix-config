@@ -72,7 +72,7 @@
       ];
     };
 
-    nixosConfigurations.rowan = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.willow = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       specialArgs = attrs;
       modules = [
@@ -93,7 +93,7 @@
         }
 
         ./configuration.nix
-        ./hardware/rowan/hardware.nix
+        ./hardware/willow/hardware.nix
       ];
     };
   };

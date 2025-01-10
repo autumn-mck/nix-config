@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  config = lib.mkIf (config.networking.hostName == "rowan") {
+  config = lib.mkIf (config.networking.hostName == "willow") {
     environment.systemPackages = with pkgs; [
     ];
 

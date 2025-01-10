@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./rowan.nix
+    ./willow.nix
   ];
 
   options = {
