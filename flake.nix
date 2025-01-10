@@ -19,9 +19,14 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fw-fanctrl = {
+      url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, nixos-cosmic, ... }@attrs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, nixos-cosmic, fw-fanctrl, ... }@attrs: {
     nixosConfigurations.cherry = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
@@ -34,6 +39,7 @@
         }
         nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
+        fw-fanctrl.nixosModules.default
 
         home-manager.nixosModules.home-manager
         {
