@@ -9,7 +9,7 @@
       description = "music-display";
       wantedBy = [ "default.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.fish}/bin/fish -c 'cd /home/autumn/MusicDisplayServer && bun dev'";
+        ExecStart = "${pkgs.fish}/bin/fish -c 'bun dev'";
         Restart = "always";
         WorkingDirectory = "/home/autumn/MusicDisplayServer";
         User = "autumn";
@@ -19,11 +19,12 @@
     systemd.services."gnss-mqtt" = {
       description = "gnss-mqtt";
       wantedBy = [ "default.target" ];
-      wants = [ "podman.socket" ];
+      requires = [ "podman.socket" ];
       after = [ "podman.socket" ];
       serviceConfig = {
-        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 3 && cd /home/autumn/mqtt && podman compose up'";
+        ExecStart = "${pkgs.fish}/bin/fish -c 'cd /home/autumn/mqtt && podman compose up'";
         Restart = "always";
+        RestartSec = "1s";
         WorkingDirectory = "/home/autumn/mqtt";
         User = "autumn";
       };
@@ -32,10 +33,10 @@
     systemd.services."gnss-war-room" = {
       description = "gnss-war-room";
       wantedBy = [ "default.target" ];
-      wants = [ "gnss-mqtt.service" ];
+      requires = [ "gnss-mqtt.service" ];
       after = [ "gnss-mqtt.service" ];
       serviceConfig = {
-        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 6 && nix-shell --run \"./webStart.sh\"'";
+        ExecStart = "${pkgs.fish}/bin/fish -c 'nix-shell --run \"./webStart.sh\"'";
         Restart = "always";
         WorkingDirectory = "/home/autumn/gnss-war-room";
         User = "autumn";
