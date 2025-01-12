@@ -22,7 +22,7 @@
       wants = [ "podman.socket" ];
       after = [ "podman.socket" ];
       serviceConfig = {
-        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 1 && cd /home/autumn/mqtt && podman compose up'";
+        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 3 && cd /home/autumn/mqtt && podman compose up'";
         Restart = "always";
         WorkingDirectory = "/home/autumn/mqtt";
         User = "autumn";
@@ -35,7 +35,7 @@
       wants = [ "gnss-mqtt.service" ];
       after = [ "gnss-mqtt.service" ];
       serviceConfig = {
-        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 2 && nix-shell --run \"./webStart.sh\"'";
+        ExecStart = "${pkgs.fish}/bin/fish -c 'sleep 6 && nix-shell --run \"./webStart.sh\"'";
         Restart = "always";
         WorkingDirectory = "/home/autumn/gnss-war-room";
         User = "autumn";
@@ -43,7 +43,7 @@
     };
 
     caddy.enable = true;
-    forgejo.enable = true;
+    forgejo.enable = false;
     services.caddy = {
       virtualHosts."music-display.autumn.is" = {
         extraConfig = ''
@@ -80,6 +80,13 @@
       };
 
       virtualHosts."gnss.mck.is" = {
+        extraConfig = ''
+          reverse_proxy localhost:2024
+        '';
+      };
+
+
+      virtualHosts."gnss.autumn.is" = {
         extraConfig = ''
           reverse_proxy localhost:2024
         '';
