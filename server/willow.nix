@@ -24,7 +24,7 @@
       serviceConfig = {
         ExecStart = "${pkgs.fish}/bin/fish -c 'cd /home/autumn/mqtt && podman compose up'";
         Restart = "always";
-        RestartSec = "1s";
+        RestartSec = "3s";
         WorkingDirectory = "/home/autumn/mqtt";
         User = "autumn";
       };
@@ -38,7 +38,20 @@
       serviceConfig = {
         ExecStart = "${pkgs.fish}/bin/fish -c 'nix-shell --run \"./webStart.sh\"'";
         Restart = "always";
+        RestartSec = "5s";
         WorkingDirectory = "/home/autumn/gnss-war-room";
+        User = "autumn";
+      };
+    };
+
+    systemd.services."wopr" = {
+      description = "wopr";
+      wantedBy = [ "default.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.fish}/bin/fish -c 'nix-shell --run \"./startup.sh\"'";
+        Restart = "always";
+        RestartSec = "5s";
+        WorkingDirectory = "/home/autumn/wopr";
         User = "autumn";
       };
     };
