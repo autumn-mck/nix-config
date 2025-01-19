@@ -30,11 +30,11 @@ in
         server = {
           DOMAIN = "git.mck.is";
           # You need to specify this to remove the port from URLs in the web UI.
-          ROOT_URL = "https://${srv.DOMAIN}/"; 
+          ROOT_URL = "https://${srv.DOMAIN}/";
           HTTP_PORT = 3001;
         };
         # You can temporarily allow registration to create an admin user.
-        service.DISABLE_REGISTRATION = true; 
+        service.DISABLE_REGISTRATION = true;
         # Add support for actions, based on act: https://github.com/nektos/act
         actions = {
           ENABLED = true;
