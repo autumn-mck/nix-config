@@ -16,6 +16,9 @@
         "identity.fxaccounts.enabled" = true;
         "privacy.resistFingerprinting" = false;
 
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.force-enabled" = true;
+
         "signon.generation.enabled" = false;
         "signon.management.page.breach-alerts.enabled" = false;
 
