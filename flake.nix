@@ -15,29 +15,17 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     fw-fanctrl = {
       url = "github:TamtamHero/fw-fanctrl/packaging/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, nixos-cosmic, fw-fanctrl, ... }@attrs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, fw-fanctrl, ... }@attrs: {
     nixosConfigurations.cherry = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        {
-          nix.settings = {
-            substituters = [ "https://cosmic.cachix.org/" ];
-            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-          };
-        }
-        nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
         fw-fanctrl.nixosModules.default
 
@@ -57,13 +45,6 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        {
-          nix.settings = {
-            substituters = [ "https://cosmic.cachix.org/" ];
-            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-          };
-        }
-        nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
 
         home-manager.nixosModules.home-manager
@@ -82,13 +63,6 @@
       system = "aarch64-linux";
       specialArgs = attrs;
       modules = [
-        {
-          nix.settings = {
-            substituters = [ "https://cosmic.cachix.org/" ];
-            trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-          };
-        }
-        nixos-cosmic.nixosModules.default
         catppuccin.nixosModules.catppuccin
 
         home-manager.nixosModules.home-manager
