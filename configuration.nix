@@ -95,6 +95,7 @@
     nix-index
     nmap
     ldns
+    dig
 
     podman-compose
   ];
