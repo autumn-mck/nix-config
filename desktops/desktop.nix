@@ -99,6 +99,7 @@
       python3
       tio
       kdiskmark
+      wireshark
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
