@@ -102,6 +102,7 @@
 
   environment.sessionVariables = {
     DOTNET_CLI_TELEMETRY_OPTOUT = "1";
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
 
   home-manager.useGlobalPkgs = true;
