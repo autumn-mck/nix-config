@@ -19,12 +19,12 @@
       name = "catppuccin-macchiato-mauve-cursors";
       # gtk.enable = true; # what does this do compared to the gtk.cursorTheme?
       # x11.enable = true;
-      size = 32;
+      # size = 32;
     };
 
     gtk.cursorTheme = {
       name = "catppuccin-macchiato-mauve-cursors";
-      size = 32;
+      # size = 32;
     };
   };
 }
