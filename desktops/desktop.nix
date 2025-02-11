@@ -24,6 +24,7 @@
       "networkmanager"
       "libvirtd"
       "dialout"
+      "vboxusers"
     ];
 
     boot.kernelModules = [ "i2c-dev" ];
@@ -58,9 +59,9 @@
       slipstream # FTL mod manager, run from command line
 
       # communication
+      # thunderbird is managed by home-manager
       vesktop
       protonmail-bridge
-      # thunderbird is managed by home-manager
       teams-for-linux
       whatsapp-for-linux
 
@@ -74,6 +75,7 @@
       bitwarden-desktop
       amdgpu_top
       usbutils
+      kdiskmark
 
       # command line utils
       xdg-utils
@@ -88,28 +90,29 @@
       cava
       youtube-music
 
-      # linux isos
-      qbittorrent
-
       # editors
       # vscode managed by home manager
       jetbrains.rider
       jetbrains.idea-ultimate
       godot_4
-
-      # misc
-      networkmanagerapplet
-      material-icons
-      kdePackages.breeze
       obsidian
+
+      # other dev stuff
       jdk
-      pandoc
-      texlive.combined.scheme-small
-      gnome-boxes
       python3
       tio
-      kdiskmark
+      gnome-boxes
+
+      # network stuff
+      qbittorrent
+      networkmanagerapplet
       wireshark
+
+      # misc
+      material-icons
+      kdePackages.breeze
+      pandoc
+      texlive.combined.scheme-small
 
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
