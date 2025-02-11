@@ -1,4 +1,9 @@
-{ home-manager, lib, config, ... }:
+{
+  home-manager,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -43,4 +48,3 @@
     };
   };
 }
-

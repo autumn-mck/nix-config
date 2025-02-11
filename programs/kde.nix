@@ -1,4 +1,10 @@
-{ home-manager, pkgs, lib, config, ... }:
+{
+  home-manager,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -25,7 +31,7 @@
 
       input = {
         keyboard = {
-          layouts = [{ layout = "gb"; }];
+          layouts = [ { layout = "gb"; } ];
         };
 
         touchpads = [
@@ -81,7 +87,11 @@
           };
         };
 
-        titlebarButtons.right = [ "minimize" "maximize" "close" ];
+        titlebarButtons.right = [
+          "minimize"
+          "maximize"
+          "close"
+        ];
         virtualDesktops.number = 8;
         virtualDesktops.rows = 2;
       };

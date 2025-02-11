@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   options = { };
@@ -19,7 +24,10 @@
         defaultFonts = {
           sansSerif = [ "IBM Plex Sans" ];
           serif = [ "IBM Plex Serif" ];
-          monospace = [ "Mononoki Nerd Font" "IBM Plex Mono" ];
+          monospace = [
+            "Mononoki Nerd Font"
+            "IBM Plex Mono"
+          ];
         };
       };
     };

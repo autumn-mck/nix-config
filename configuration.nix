@@ -1,16 +1,21 @@
-{ config, lib, pkgs, home-manager, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  home-manager,
+  ...
+}:
 
 {
-  imports =
-    [
-      home-manager.nixosModules.default
+  imports = [
+    home-manager.nixosModules.default
 
-      ./declutterHome.nix
+    ./declutterHome.nix
 
-      ./programs/programs.nix
-      ./desktops/desktop.nix
-      ./server/server.nix
-    ];
+    ./programs/programs.nix
+    ./desktops/desktop.nix
+    ./server/server.nix
+  ];
 
   networking.hostName = "cherry";
   isDesktop = true;
@@ -43,7 +48,10 @@
   # nix settings
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     use-xdg-base-directories = true;
   };
 
@@ -89,6 +97,7 @@
     # unimportant utils
     xdg-ninja
     nixpkgs-fmt
+    nixfmt-rfc-style
     gnumake
     zip
     unimatrix

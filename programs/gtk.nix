@@ -1,4 +1,10 @@
-{ home-manager, pkgs, config, lib, ... }:
+{
+  home-manager,
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -13,7 +19,10 @@
         package = pkgs.catppuccin-gtk.override {
           accents = [ "mauve" ];
           size = "compact";
-          tweaks = [ "rimless" "normal" ];
+          tweaks = [
+            "rimless"
+            "normal"
+          ];
           variant = "macchiato";
         };
       };
@@ -30,9 +39,12 @@
       enable = true;
 
       configFile = {
-        "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
-        "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
-        "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+        "gtk-4.0/assets".source =
+          "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+        "gtk-4.0/gtk.css".source =
+          "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+        "gtk-4.0/gtk-dark.css".source =
+          "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
       };
     };
   };

@@ -1,4 +1,10 @@
-{ home-manager, pkgs, lib, config, ... }:
+{
+  home-manager,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {

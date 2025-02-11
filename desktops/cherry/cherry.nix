@@ -8,4 +8,3 @@
     programs.fw-fanctrl.config.defaultStrategy = "laziest";
   };
 }
-

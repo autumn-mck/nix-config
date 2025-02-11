@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   cfg = config.services.forgejo;
   srv = cfg.settings.server;
@@ -48,7 +53,7 @@ in
 
         # Sending emails is completely optional
         # You can send a test email from the web UI at:
-        # Profile Picture > Site Administration > Configuration >  Mailer Configuration 
+        # Profile Picture > Site Administration > Configuration >  Mailer Configuration
         # mailer = {
         #   ENABLED = true;
         #   SMTP_ADDR = "mail.example.com";

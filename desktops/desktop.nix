@@ -1,4 +1,10 @@
-{ config, home-manager, pkgs, lib, ... }:
+{
+  config,
+  home-manager,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -14,7 +20,11 @@
 
   config = lib.mkIf (config.isDesktop) {
     networking.networkmanager.enable = true;
-    users.users.autumn.extraGroups = [ "networkmanager" "libvirtd" "dialout" ];
+    users.users.autumn.extraGroups = [
+      "networkmanager"
+      "libvirtd"
+      "dialout"
+    ];
 
     boot.kernelModules = [ "i2c-dev" ];
     boot.supportedFilesystems = [ "ntfs" ];

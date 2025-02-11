@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   config = lib.mkIf (config.networking.hostName == "willow") {
@@ -80,7 +85,6 @@
         '';
       };
 
-
       virtualHosts."gnss-mqtt.mck.is" = {
         extraConfig = ''
           reverse_proxy localhost:1883
@@ -98,7 +102,6 @@
           reverse_proxy localhost:2024
         '';
       };
-
 
       virtualHosts."gnss.autumn.is" = {
         extraConfig = ''

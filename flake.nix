@@ -21,60 +21,71 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, catppuccin, plasma-manager, fw-fanctrl, ... }@attrs: {
-    nixosConfigurations.cherry = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-        fw-fanctrl.nixosModules.default
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-hardware,
+      home-manager,
+      catppuccin,
+      plasma-manager,
+      fw-fanctrl,
+      ...
+    }@attrs:
+    {
+      nixosConfigurations.cherry = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+          fw-fanctrl.nixosModules.default
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-        }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
 
-        ./configuration.nix
-        ./hardware/cherry/hardware.nix
-      ];
+          ./configuration.nix
+          ./hardware/cherry/hardware.nix
+        ];
+      };
+
+      nixosConfigurations.hawthorn = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = attrs;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
+
+          ./configuration.nix
+          ./hardware/hawthorn/hardware.nix
+        ];
+      };
+
+      nixosConfigurations.willow = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = attrs;
+        modules = [
+          catppuccin.nixosModules.catppuccin
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
+
+          ./configuration.nix
+          ./hardware/willow/hardware.nix
+        ];
+      };
     };
-
-    nixosConfigurations.hawthorn = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-        }
-
-        ./configuration.nix
-        ./hardware/hawthorn/hardware.nix
-      ];
-    };
-
-    nixosConfigurations.willow = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
-      specialArgs = attrs;
-      modules = [
-        catppuccin.nixosModules.catppuccin
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-        }
-
-        ./configuration.nix
-        ./hardware/willow/hardware.nix
-      ];
-    };
-  };
 }

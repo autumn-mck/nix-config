@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
   ];
 
-
   boot.initrd.kernelModules = [ "virtio_gpu" ];
   boot.kernelParams = [ "console=tty" ];
 
