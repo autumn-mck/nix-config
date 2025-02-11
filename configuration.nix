@@ -105,6 +105,7 @@
     nmap
     ldns
     dig
+    file
 
     podman-compose
   ];
