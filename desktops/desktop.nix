@@ -211,6 +211,7 @@
             "video/3gpp" = "vlc.desktop";
             "video/mp4" = "vlc.desktop";
             "video/mpeg" = "vlc.desktop";
+            "video/x-matroska" = "vlc.desktop";
             "video/ogg" = "vlc.desktop";
             "video/quicktime" = "vlc.desktop";
 
