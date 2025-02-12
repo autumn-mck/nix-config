@@ -25,6 +25,7 @@
       "libvirtd"
       "dialout"
       "vboxusers"
+      "wireshark"
     ];
 
     boot.kernelModules = [ "i2c-dev" ];
@@ -135,6 +136,7 @@
     virtualisation.spiceUSBRedirection.enable = true;
 
     programs.steam.enable = true;
+    programs.wireshark.enable = true;
 
     services.cpupower-gui.enable = true;
 
