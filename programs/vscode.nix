@@ -58,6 +58,7 @@
         "terminal.external.linuxExec" = "kitty";
         "terminal.integrated.defaultProfile.linux" = "fish";
         "window.menuBarVisibility" = "toggle";
+        "window.customTitleBarVisibility" = "never";
 
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "prettier.printWidth" = 100;
