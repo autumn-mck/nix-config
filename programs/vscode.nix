@@ -59,6 +59,7 @@
         "terminal.integrated.defaultProfile.linux" = "fish";
         "window.menuBarVisibility" = "toggle";
         "window.customTitleBarVisibility" = "never";
+        "window.titleBarStyle" = "native";
 
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "prettier.printWidth" = 100;
