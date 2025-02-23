@@ -12,8 +12,8 @@
   };
 
   config = lib.mkIf (config.vscode.enable) {
-    programs.vscode = {
-      enable = true;
+    programs.vscode.enable = true;
+    programs.vscode.profiles.default = {
       # sandboxes vscode, which allows extensions to work without additional configuration,
       # but as a result prevents elevated permissions from being used in the terminal (e.g. sudo)
       # (might look at this again later, but commented out is fine for now)
