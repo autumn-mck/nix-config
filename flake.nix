@@ -57,6 +57,7 @@
         specialArgs = attrs;
         modules = [
           catppuccin.nixosModules.catppuccin
+          fw-fanctrl.nixosModules.default
 
           home-manager.nixosModules.home-manager
           {
@@ -75,6 +76,7 @@
         specialArgs = attrs;
         modules = [
           catppuccin.nixosModules.catppuccin
+          fw-fanctrl.nixosModules.default
 
           home-manager.nixosModules.home-manager
           {
