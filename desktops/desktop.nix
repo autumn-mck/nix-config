@@ -41,7 +41,7 @@
       libreoffice
       hunspell # spell checker
       hunspellDicts.en-gb-ise
-      okular # pdf/epub/djvu viewer
+      kdePackages.okular # pdf/epub/djvu viewer
 
       # wine
       winetricks
