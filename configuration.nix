@@ -106,6 +106,7 @@
     ldns
     dig
     file
+    ed
 
     podman-compose
   ];
