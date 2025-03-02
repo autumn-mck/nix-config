@@ -24,7 +24,7 @@
 
     gtk.cursorTheme = {
       name = "catppuccin-macchiato-mauve-cursors";
-      # size = 32;
+      size = 32;
     };
   };
 }
