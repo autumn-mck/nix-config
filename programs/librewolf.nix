@@ -21,6 +21,8 @@
         "identity.fxaccounts.enabled" = true;
         "privacy.resistFingerprinting" = false;
 
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
         "media.ffmpeg.vaapi.enabled" = true;
         "media.hardware-video-decoding.force-enabled" = true;
 
