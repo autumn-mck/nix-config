@@ -97,6 +97,7 @@
       jetbrains.idea-ultimate
       godot_4
       obsidian
+      arduino-ide
       kdePackages.kdenlive # (stretching a bit)
 
       # other dev stuff
