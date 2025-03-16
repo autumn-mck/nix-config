@@ -117,9 +117,24 @@
       pandoc
       texlive.combined.scheme-small
 
+      waybar
+
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
         accents = [ "mauve" ];
+      })
+    ];
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        waybar = prev.waybar.overrideAttrs (old: {
+          src = prev.fetchFromGitHub {
+            owner = "matt-fff";
+            repo = "Waybar";
+            rev = "f7b4451564dd860bfacfc293d0bbd414e6bb4e54";
+            hash = "sha256-dG7K1r+dOI2Mu09uyJJc1GWoZZke1CD160qIbVzch5Q=";
+          };
+        });
       })
     ];
 

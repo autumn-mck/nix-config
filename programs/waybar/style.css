@@ -48,9 +48,9 @@ window#waybar {
 }
 
 #workspaces button:hover {
+	color: #8aadf4;
 	background: #24273a;
 	border: #24273a;
-	padding: 0 3px;
 }
 
 #wireplumber {

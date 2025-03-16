@@ -1,4 +1,4 @@
-version = "1.1.14"
+version = "1.1.16"
 
 [format]
 dedup = true
@@ -6,8 +6,8 @@ dedup_inactive_fullscreen = false
 delim = " "
 client = "{icon} "
 client_active = "<span color=\"#c6a0f6\">{icon}</span>"
-workspace = "{id}: {clients}  ­" # invisible unicode char after spaces to keep them from being trimmed
-workspace_empty = "{id}   ­"
+workspace = "{id}: {clients}  ­" # invisible unicode char after spaces to keep them from being trimmed 😭
+workspace_empty = "{id}: 󰄰  ­"
 client_dup = "{icon}{counter_sup}{delim}"
 client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
 client_fullscreen = "[{icon} ]{delim}"
@@ -16,7 +16,7 @@ client_fullscreen = "[{icon} ]{delim}"
 DEFAULT=""
 
 [title_in_class."(firefox|librewolf|chrom.*)"]
-"(?i)youtube" = ""
+"(?i)youtube" = ""
 "(?i)twitch" = ""
 
 [class]
@@ -37,29 +37,32 @@ calibre-gui = ""
 "Gimp-2.10" = ""
 darktable = ""
 krita = ""
+"org.inkscape.Inkscape" = ""
 
 swappy = ""
 
 # editors
+code = ""
 code-oss = ""
 code-url-handler = ""
 "jetbrains-studio" = "" # is actually android studio
 "(?i)waydroid.*" = ""
-obsidian = ""
+obsidian = "󰠮"
+"Arduino IDE" = ""
+"org.kde.kate" = "󱩼"
 
 # chat
-discord = ""
+discord = ""
 vesktop = ""
 element = ""
-whatsapp-desktop = ""
+wasistlos = ""
+"teams-for-linux" = "󰊻"
 
 # gaming
 steam = ""
 itch = ""
 "Minecraft.*" = ""
-"org.prismlauncher.PrismLauncher" = ""
-
-fontforge = ""
+"org.prismlauncher.PrismLauncher" = "󰍳"
 
 # libreoffice
 libreoffice-calc = ""
@@ -70,17 +73,20 @@ libreoffice-writer = ""
 # video
 mpv = ""
 vlc = ""
+"com.obsproject.Studio" = ""
 
 # music
 spotify = ""
 "musicbee.exe" = ""
+"com.github.th_ch.youtube_music" = ""
 
 # email
-thunderbird = ""
-neomutt = ""
+thunderbird = ""
+neomutt = ""
 
 # file managers
-dolphin = ""
+dolphin = ""
+"org.kde.gwenview" = ""
 
 # other
 waypaper = ""
@@ -90,8 +96,8 @@ Bitwarden = ""
 nm-connection-editor = ""
 org-ksnip-ksnip = ""
 pavucontrol = ""
-wire = "󰁀"
-wireshark-gtk = ""
+wire = "󱙳"
+wireshark-gtk = "󱙳"
 
 [exclude]
 "" = "^$" # prevent displaying clients with empty class
