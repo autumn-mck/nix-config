@@ -14,7 +14,7 @@
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "catppuccin-macchiato";
+      theme = "sddm-astronaut-theme";
     };
 
     services.displayManager.defaultSession = "hyprland";
@@ -25,6 +25,12 @@
         font = "IBM Plex Sans";
         fontSize = "16";
       })
+
+      pixel-code
+      (sddm-astronaut.override {
+        embeddedTheme = "purple_leaves";
+      })
+      kdePackages.qtmultimedia
     ];
   };
 }
