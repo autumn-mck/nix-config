@@ -65,6 +65,7 @@
       protonmail-bridge
       teams-for-linux
       whatsapp-for-linux
+      cinny-desktop
 
       # browsers
       ungoogled-chromium
