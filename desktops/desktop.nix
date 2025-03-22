@@ -121,6 +121,13 @@
 
       waybar
 
+      ghidra
+      okteta
+      gobuster
+      stegseek
+      netcat-gnu
+      nmap
+
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
         accents = [ "mauve" ];
