@@ -100,6 +100,7 @@
       obsidian
       arduino-ide
       kdePackages.kdenlive # (stretching a bit)
+      kdePackages.kate
 
       # other dev stuff
       jdk
