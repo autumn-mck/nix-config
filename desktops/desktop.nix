@@ -128,6 +128,8 @@
       netcat-gnu
       nmap
 
+      ollama
+
       (catppuccin-kde.override {
         flavour = [ "macchiato" ];
         accents = [ "mauve" ];
