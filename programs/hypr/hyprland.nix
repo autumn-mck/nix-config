@@ -35,8 +35,7 @@
       cliphist
       wl-clip-persist
 
-      swww
-      waypaper
+      hyprpaper
 
       lxqt.lxqt-policykit
 
@@ -56,6 +55,9 @@
       xdg.configFile."hypr/scripts/screenshot.sh".source = ./screenshot.sh;
 
       xdg.configFile."hyprland-autoname-workspaces/config.toml".source = ./autoname.toml;
+
+      xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
+      xdg.configFile."gdansk.jpg".source = ./gdansk.jpg;
 
       xdg.configFile."hypr/hyprshade.toml".source = ./hyprshade.toml;
       xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./blue-light-filter.glsl;
