@@ -19,6 +19,7 @@
     ./sddm.nix
     ./caddy.nix
     ./forgejo.nix
+    ./virtualbox.nix
   ];
 
   home-manager.users.autumn = {

@@ -168,12 +168,6 @@
 
     services.cpupower-gui.enable = true;
 
-    virtualisation.virtualbox.host.enable = true;
-    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
-
-    virtualisation.virtualbox.guest.enable = true;
-    virtualisation.virtualbox.guest.dragAndDrop = true;
-
     android.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
@@ -186,6 +180,7 @@
     syncthing.enable = true;
     hyprland.enable = true;
     mullvad.enable = true;
+    virtualbox.enable = true;
 
     services.printing.enable = false;
     services.gnome.gnome-keyring.enable = true;
