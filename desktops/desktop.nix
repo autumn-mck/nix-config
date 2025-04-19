@@ -35,7 +35,7 @@
     environment.systemPackages = with pkgs; [
       # image stuff
       inkscape
-      gimp
+      gimp3
 
       # office
       libreoffice
