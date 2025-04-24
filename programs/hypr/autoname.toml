@@ -34,7 +34,7 @@ chromium = ""
 calibre-gui = ""
 
 # image stuff
-"Gimp-2.10" = ""
+"Gimp-3.*" = ""
 darktable = ""
 krita = ""
 "org.inkscape.Inkscape" = ""
