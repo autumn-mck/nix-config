@@ -66,6 +66,7 @@
       teams-for-linux
       whatsapp-for-linux
       cinny-desktop
+      signal-desktop
 
       # browsers
       ungoogled-chromium
