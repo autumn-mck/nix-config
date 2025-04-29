@@ -20,7 +20,7 @@
           theme = "catppuccin-macchiato-mauve-cursors";
           size = 32;
         };
-        colorScheme = "CatppuccinMacchiatoMauve";
+        colorScheme = "Catppuccin-Macchiato-Mauve";
         splashScreen.theme = "Catppuccin-Macchiato-Mauve";
         wallpaper = ../imgs/gdansk.jpg;
       };
