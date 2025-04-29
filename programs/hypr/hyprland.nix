@@ -39,18 +39,29 @@
 
       lxqt.lxqt-policykit
 
-      libsForQt5.dolphin # kde6 version seems to run through xwayland for some reason, kde5 version is fine for now
-      libsForQt5.ark
+      kdePackages.dolphin # kde6 version seems to run through xwayland for some reason, kde5 version is fine for now
+      kdePackages.ark
 
       lightly-boehs
 
-      libsForQt5.gwenview
+      kdePackages.gwenview
 
       hyprnome
       hyprland-autoname-workspaces
     ];
 
+    qt = {
+      enable = true;
+      platformTheme = "kde";
+      style = "breeze";
+    };
+
     home-manager.users.autumn = {
+      qt = {
+        style.name = "Catppuccin-Macchiato-Mauve";
+        style.package = pkgs.catppuccin-kde;
+      };
+
       xdg.configFile."hypr/macchiato.conf".source = ./macchiato.conf;
       xdg.configFile."hypr/scripts/screenshot.sh".source = ./screenshot.sh;
 
