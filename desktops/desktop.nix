@@ -175,6 +175,7 @@
     android.enable = true;
     pipewire.enable = true;
     sddm.enable = true;
+    plymouth.enable = true;
 
     services.xserver.enable = true;
     services.desktopManager.plasma6.enable = true;
