@@ -29,6 +29,8 @@
 
         esbenp.prettier-vscode
 
+        github.copilot
+
         coolbear.systemd-unit-file
         jnoortheen.nix-ide
         unifiedjs.vscode-mdx
