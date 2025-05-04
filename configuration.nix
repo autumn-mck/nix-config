@@ -55,6 +55,12 @@
     use-xdg-base-directories = true;
   };
 
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "15m";
+    options = "--delete-older-than 14d";
+  };
+
   programs.command-not-found.enable = false; # broken when using only flakes
 
   # Packages
