@@ -108,6 +108,12 @@
           reverse_proxy localhost:2024
         '';
       };
+
+      virtualHosts."rss.mck.is" = {
+        extraConfig = ''
+          reverse_proxy localhost:5962
+        '';
+      };
     };
   };
 }
