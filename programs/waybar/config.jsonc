@@ -2,13 +2,7 @@
 	"layer": "top",
 	"position": "top",
 
-	"modules-left": [
-		"group/group-power",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
-	],
+	"modules-left": ["hyprland/workspaces", "custom/right-arrow-dark"],
 	"modules-center": [
 		"custom/left-arrow-dark",
 		"clock#1",
