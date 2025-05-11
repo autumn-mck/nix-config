@@ -63,7 +63,7 @@
       # thunderbird is managed by home-manager
       vesktop
       protonmail-bridge
-      teams-for-linux
+      mattermost-desktop
       whatsapp-for-linux
       cinny-desktop
       signal-desktop
