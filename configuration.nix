@@ -42,6 +42,7 @@
     isNormalUser = true;
     description = "autumn";
     extraGroups = [ "wheel" ];
+    linger = true;
     packages = with pkgs; [ ];
   };
 
